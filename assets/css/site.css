@@ -627,8 +627,8 @@ body.site-gridmenu-active {
       .page-copyright-inverse .social .icon:hover, .page-copyright-inverse .social .icon:active {
         color: rgba(255, 255, 255, 0.8); }
 
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-  right: 2rem; }
+.page .select2-container--default .select2-selection--single .select2-selection__arrow {
+  right: 1.5rem; }
 
 @media (max-width: 991.98px) {
   .page {
@@ -4569,7 +4569,7 @@ body > .loader {
   color: #fff !important; }
 
 .text-gray {
-  color: #bdbdbd; }
+  color: #a5b1c3; }
 
 .bg-white {
   color: #76838f;
