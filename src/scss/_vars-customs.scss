@@ -1,0 +1,32 @@
+// Write your custom variables here
+// --------------------------------
+
+$primary: #3e8ef7;
+
+$gray-color: #a4b1c2;
+
+
+//== Body
+$body-bg: #f8f9fc;
+$body-color: $black;
+
+//== Page
+//
+//##
+$page-bg: $body-bg;
+$page-vertical-padding: 30px;
+$page-horizontal-padding: 30px;
+
+
+
+//== Site Menubar light
+//
+//##
+$site-menubar-light-color: $gray-color;
+$site-menubar-light-bg: $body-bg;
+$site-menubar-light-shadow: $site-menubar-shadow;
+$site-menubar-light-footer-link-bg: $gray-200;
+$site-menubar-light-footer-link-hover-bg: darken($gray-200, 5%);
+
+
+$border-color: #e3ebf6;

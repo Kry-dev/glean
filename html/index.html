@@ -1,0 +1,1694 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="bootstrap admin template">
+    <meta name="author" content="">
+    
+    <title>Gleantap | Remark Admin Template</title>
+    
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap-extend.min.css">
+    <link rel="stylesheet" href="../assets/css/site.min.css">
+    
+    <!-- Plugins -->
+    <link rel="stylesheet" href="../assets/vendor/animsition/animsition.css">
+    <link rel="stylesheet" href="../assets/vendor/asscrollable/asScrollable.css">
+    <link rel="stylesheet" href="../assets/vendor/switchery/switchery.css">
+    <link rel="stylesheet" href="../assets/vendor/intro-js/introjs.css">
+    <link rel="stylesheet" href="../assets/vendor/slidepanel/slidePanel.css">
+    <link rel="stylesheet" href="../assets/vendor/flag-icon-css/flag-icon.css">
+    <link rel="stylesheet" href="../assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
+    <link rel="stylesheet" href="../assets/vendor/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="../assets/vendor/datatables.net-fixedheader-bs4/dataTables.fixedheader.bootstrap4.css">
+    <link rel="stylesheet" href="../assets/vendor/datatables.net-fixedcolumns-bs4/dataTables.fixedcolumns.bootstrap4.css">
+    <link rel="stylesheet" href="../assets/vendor/datatables.net-rowgroup-bs4/dataTables.rowgroup.bootstrap4.css">
+    <link rel="stylesheet" href="../assets/vendor/datatables.net-scroller-bs4/dataTables.scroller.bootstrap4.css">
+    <link rel="stylesheet" href="../assets/vendor/datatables.net-select-bs4/dataTables.select.bootstrap4.css">
+    <link rel="stylesheet" href="../assets/vendor/datatables.net-responsive-bs4/dataTables.responsive.bootstrap4.css">
+    <link rel="stylesheet" href="../assets/vendor/datatables.net-buttons-bs4/dataTables.buttons.bootstrap4.css">
+    
+    <link rel="stylesheet" href="../assets/vendor/chartist/chartist.css">
+    <link rel="stylesheet" href="../assets/vendor/asscrollable/asScrollable.css">
+    
+    <link rel="stylesheet" href="../assets/examples/css/uikit/modals.css">
+    <link rel="stylesheet" href="../assets/examples/css/charts/chartist.css">
+    <link rel="stylesheet" href="../assets/examples/css/tables/datatable.css">
+    <!-- <link rel="stylesheet" href="../assets/examples/css/dashboard/v1.css"> -->
+    
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../assets/fonts/weather-icons/weather-icons.min.css">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/fonts/EuclideCircularA/EuclideCircularA.css">
+    <link rel="stylesheet" href="../assets/fonts/web-icons/web-icons.min.css">
+    <link rel="stylesheet" href="../assets/fonts/brand-icons/brand-icons.min.css">
+    
+    <!--[if lt IE 9]>
+    <script src="../assets/vendor/html5shiv/html5shiv.min.js"></script>
+    <![endif]-->
+    
+    <!--[if lt IE 10]>
+    <script src="../assets/vendor/media-match/media.match.min.js"></script>
+    <script src="../assets/vendor/respond/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Scripts -->
+    <script src="../assets/vendor/breakpoints/breakpoints.js"></script>
+    <script>
+      Breakpoints();
+    </script>
+  </head>
+  <body class="animsition dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep">
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="site-menubar site-menubar-light">
+      <div class="site-menubar-brand site-gridmenu-toggle" data-toggle="gridmenu">
+          <span class="site-menubar-brand-logo">G</span>
+          <span class="site-menubar-brand-text">Gleantap</span>
+      </div>
+      <div class="site-menubar-toggle" id="toggleMenubar">
+        <a class="site-menubar-toggle-link" data-toggle="menubar" href="#" role="button">
+          <i class="icon hamburger hamburger-arrow-left">
+            <span class="sr-only">Toggle menubar</span>
+            <span class="hamburger-bar"></span>
+          </i>
+        </a>
+      </div>
+      <div class="site-menubar-body">
+        <div>
+          <div>
+    
+            <ul class="site-menu" data-plugin="menu">
+            
+            
+              <li class="site-menu-item active">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
+                  <span class="site-menu-title">Dashboard</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-file" aria-hidden="true"></i>
+                  <span class="site-menu-title">Pages</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-bookmark" aria-hidden="true"></i>
+                  <span class="site-menu-title">Basic UI</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-hammer" aria-hidden="true"></i>
+                  <span class="site-menu-title">Advanced UI</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-plugin" aria-hidden="true"></i>
+                  <span class="site-menu-title">Structure</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-extension" aria-hidden="true"></i>
+                  <span class="site-menu-title">Widgets</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-library" aria-hidden="true"></i>
+                  <span class="site-menu-title">Forms</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-table" aria-hidden="true"></i>
+                  <span class="site-menu-title">Tables</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-pie-chart" aria-hidden="true"></i>
+                  <span class="site-menu-title">Chart</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-grid-4" aria-hidden="true"></i>
+                  <span class="site-menu-title">Apps</span>
+                </a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </div>
+    
+      <div class="site-menubar-footer">
+        <div class="dropdown show">
+          <a class="site-menubar-avatar" data-toggle="dropdown" href="#" aria-expanded="true" data-animation="scale-up"
+            role="button">
+            <span class="avatar avatar-online">
+              <img src="../assets/portraits/5.jpg" alt="...">
+              <i></i>
+            </span>
+          </a>
+          <div class="dropdown-menu show" role="menu">
+            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i>
+              Profile</a>
+            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-payment"
+                aria-hidden="true"></i> Billing</a>
+            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-settings"
+                aria-hidden="true"></i> Settings</a>
+            <div class="dropdown-divider" role="presentation"></div>
+            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-power"
+                aria-hidden="true"></i> Logout</a>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    <div class="site-gridmenu">
+      <div>
+        <div>
+          <ul>
+            <li>
+              <a href="apps/mailbox/mailbox.html">
+                <i class="icon wb-envelope"></i>
+                <span>Mailbox</span>
+              </a>
+            </li>
+            <li>
+              <a href="apps/calendar/calendar.html">
+                <i class="icon wb-calendar"></i>
+                <span>Calendar</span>
+              </a>
+            </li>
+            <li>
+              <a href="apps/contacts/contacts.html">
+                <i class="icon wb-user"></i>
+                <span>Contacts</span>
+              </a>
+            </li>
+            <li>
+              <a href="apps/media/overview.html">
+                <i class="icon wb-camera"></i>
+                <span>Media</span>
+              </a>
+            </li>
+            <li>
+              <a href="apps/documents/categories.html">
+                <i class="icon wb-order"></i>
+                <span>Documents</span>
+              </a>
+            </li>
+            <li>
+              <a href="apps/projects/projects.html">
+                <i class="icon wb-image"></i>
+                <span>Project</span>
+              </a>
+            </li>
+            <li>
+              <a href="apps/forum/forum.html">
+                <i class="icon wb-chat-group"></i>
+                <span>Forum</span>
+              </a>
+            </li>
+            <li>
+              <a href="index.html">
+                <i class="icon wb-dashboard"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+<!-- Page -->
+<div class="page">
+  <div class="page-header">
+    <h1 class="page-title">Appointments Coming</h1>
+  </div>
+  <div class="page-content container-fluid">
+    <div id="page-tabs" class="nav-tabs-horizontal page-nav-tabs" data-plugin="tabs">
+      <ul class="nav nav-tabs nav-tabs-line" role="tablist">
+        <li class="nav-item" role="presentation"><a class="nav-link " data-toggle="tab" href="#segmentReport"
+            aria-controls="segmentReport" role="tab" aria-selected="false">Segment Report</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link active show" data-toggle="tab" href="#customerList"
+            aria-controls="customerList" role="tab" aria-selected="true">Customer list</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link" data-toggle="tab" href="#segmentInsights"
+            aria-controls="segmentInsights" role="tab" aria-selected="false">Segment Insights</a></li>
+        <li class="dropdown nav-item" role="presentation" style="display: none;">
+          <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" aria-expanded="false">Dropdown </a>
+          <div class="dropdown-menu" role="menu">
+            <a class="dropdown-item" data-toggle="tab" href="#segmentReport" aria-controls="segmentReport"
+              role="tab">Home</a>
+            <a class="dropdown-item" data-toggle="tab" href="#customerList" aria-controls="customerList"
+              role="tab">Components</a>
+            <a class="dropdown-item" data-toggle="tab" href="#segmentInsights" aria-controls="segmentInsights"
+              role="tab">Css</a>
+          </div>
+        </li>
+      </ul>
+      <div class="tab-content pt-20">
+        <div class="tab-pane " id="segmentReport" role="tabpanel">
+          <div class="row row-lg">
+            <div class="col-xl-4 col-lg-6">
+              <!-- Example Simple Line Chart -->
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Simple Line Chart</h4>
+                </div>
+                <div class="panel-body">
+                  <div class="ct-chart" id="exampleSimpleLine"></div>
+                </div>
+              </div>
+              <!-- End Example Simple Line Chart -->
+            </div>
+            <div class="col-xl-4 col-lg-6">
+              <!-- Example Line Scatter Diagram -->
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Line Scatter Diagram</h4>
+                </div>
+                <div class="panel-body">
+                  <div class="ct-chart" id="exampleLineScatter"></div>
+                </div>
+              </div>
+              <!-- End Example Line Scatter Diagram -->
+            </div>
+
+            <div class="col-xl-4 col-lg-6">
+              <!-- Example Line Chart With Tooltips -->
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Line Chart With Tooltips</h4>
+                </div>
+                <div class="panel-body">
+                  <div class="ct-chart" id="exampleTooltipsLine"></div>
+                </div>
+              </div>
+              <!-- End Example Line Chart With Tooltips -->
+            </div>
+            <div class="col-xl-6 col-lg-6">
+              <!-- Example Line Chart With Area -->
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Line Chart With Area</h4>
+                </div>
+                <div class="panel-body">
+                  <div class="ct-chart" id="exampleAreaLine"></div>
+                </div>
+              </div>
+              <!-- Example Line Chart With Area -->
+            </div>
+            <div class="col-xl-6 col-lg-6">
+              <!-- Example Bi-Polar Line -->
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Bi-Polar Line Chart With Area Only</h4>
+                </div>
+                <div class="panel-body">
+                  <div class="ct-chart" id="exampleOnlyArea"></div>
+                </div>
+              </div>
+              <!-- End Example Bi Polar Line -->
+            </div>
+
+            <div class="col-xl-12 col-lg-6">
+              <!-- Example Advanced Smil Animations -->
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Advanced Smil Animations</h4>
+                </div>
+                <div class="panel-body">
+                  <div class="ct-chart" id="exampleLineAnimations"></div>
+                </div>
+              </div>
+              <!-- End Example Advanced Smil Animations -->
+            </div>
+
+            <div class="col-xl-4 col-lg-6">
+              <!-- Example Svg Path Animation -->
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Svg Path Animation</h4>
+                </div>
+                <div class="panel-body">
+                  <div class="ct-chart" id="examplePathAnimation"></div>
+                </div>
+              </div>
+              <!-- Example Svg Path Animation -->
+            </div>
+
+            <div class="col-xl-4 col-lg-6">
+              <!-- Example Line Interpolation -->
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Line Interpolation / Smoothing</h4>
+                </div>
+                <div class="panel-body">
+                  <div class="ct-chart" id="exampleSmoothingLine"></div>
+                </div>
+              </div>
+              <!-- End Example Line Interpolation -->
+            </div>
+            <div class="col-xl-4 col-lg-6">
+              <!-- Example Bi-Polar Bar -->
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Bi-Polar Bar Chart</h4>
+                </div>
+                <div class="panel-body">
+                  <div class="ct-chart" id="exampleBiPolarBar"></div>
+                </div>
+              </div>
+              <!-- End Example Bi Polar Bar -->
+            </div>
+
+            <div class="col-xl-4 col-lg-6">
+              <!-- Example Overlapping Bars -->
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Overlapping Bars On Mobile</h4>
+                </div>
+                <div class="panel-body">
+                  <div class="ct-chart" id="exampleOverlappingBar"></div>
+                </div>
+              </div>
+              <!-- End Example Overlapping Bars -->
+            </div>
+
+            <div class="col-xl-4 col-lg-6">
+              <!-- Example Add Peak Circles -->
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Add Peak Circles Using The Draw Events</h4>
+                </div>
+                <div class="panel-body">
+                  <div class="ct-chart" id="examplePeakCirclesBar"></div>
+                </div>
+              </div>
+              <!-- End Example Add Peak Circles -->
+            </div>
+
+            <div class="col-xl-4 col-lg-6">
+              <!-- Example Multi-Line Labels -->
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Multi-Line Labels</h4>
+                </div>
+                <div class="panel-body">
+                  <div class="ct-chart" id="exampleMultiLabelsBar"></div>
+                </div>
+              </div>
+              <!-- End Example Multi Line Labels -->
+            </div>
+
+            <div class="col-xl-4 col-lg-6">
+              <!-- Example Stacked Bar Chart -->
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Stacked Bar Chart</h4>
+                </div>
+                <div class="panel-body">
+                  <div class="ct-chart" id="exampleStackedBar"></div>
+                </div>
+              </div>
+              <!-- End Example Stacked Bar Chart -->
+            </div>
+
+            <div class="col-xl-4 col-lg-6">
+              <!-- Example Horizontal Bar -->
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Horizontal Bar Chart</h4>
+                </div>
+
+                <div class="panel-body">
+                  <div class="ct-chart" id="exampleHorizontalBar"></div>
+                </div>
+              </div>
+              <!-- End Example Horizontal Bar -->
+            </div>
+
+            <div class="col-xl-4 col-lg-6">
+              <!-- Example Extreme Responsive -->
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Extreme Responsive Configuration</h4>
+                </div>
+
+                <div class="panel-body">
+                  <div class="ct-chart" id="exampleResponsiveBar"></div>
+                </div>
+              </div>
+              <!-- End Example Extreme Responsive -->
+            </div>
+            <div class="col-xl-4 col-lg-6">
+              <!-- Example Simple Pie Chart -->
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Simple Pie Chart</h4>
+                </div>
+
+                <div class="panel-body">
+                  <div class="ct-chart" id="exampleSimplePie"></div>
+                </div>
+              </div>
+              <!-- End Example Simple Pie Chart -->
+            </div>
+
+            <div class="col-xl-4 col-lg-6">
+              <!-- Example Simple Pie Chart Labels -->
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Pie Chart With Custom Labels</h4>
+                </div>
+                <div class="panel-body">
+                  <div class="ct-chart" id="exampleLabelsPie"></div>
+                </div>
+              </div>
+              <!-- End Example Simple Pie Chart Labels -->
+            </div>
+
+            <div class="col-xl-4 col-lg-6">
+              <!-- Example Gauge Chart -->
+              <div class="panel">
+                <div class="panel-heading">
+                  <h4 class="panel-title">Gauge Chart</h4>
+                </div>
+                <div class="panel-body">
+                  <div class="ct-chart" id="exampleGaugePie"></div>
+                </div>
+              </div>
+              <!-- End Example Gauge Chart -->
+            </div>
+          </div>
+
+        </div>
+        <div class="tab-pane active show" id="customerList" role="tabpanel">
+          <!-- Table Individual column searching -->
+          <div class="custom-table">
+            <div class="custom-table-body">
+              <table class="table table-hover dataTable w-full" id="customerListTable">
+                <!-- <tfoot>
+                  <tr>
+                    <th>User Name</th>
+                    <th>Phone & Mail</th>
+                    <th>List & Date</th>
+                    <th>Sessions</th>
+                    <th>Add & Last Access</th>
+                    <th>Action</th>
+                  </tr>
+                </tfoot> -->
+                <thead>
+                  <tr>
+                    <th>User Name</th>
+                    <th>Phone & Mail</th>
+                    <th>List & Date</th>
+                    <th>Sessions</th>
+                    <th>Add & Last Access</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>AdaHoppe <span class="light">ID=100013137888840</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span>
+                    </td>
+                    <td>2013/05/13</td>
+                    <td>23:59 PM</td>
+                    <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Kate <span class="light">ID=100013137888833</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span>
+                    </td>
+                    <td>2014/06/13</td>
+                    <td>23:59 PM</td>
+                    <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Torrey<span class="light">ID=100013137888834</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span>
+                    </td>
+                    <td>2014/09/12</td>
+                    <td>23:59 PM</td>
+                    <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Jolin <span class="light">ID=100013137888835</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span>
+                    </td>
+                    <td>2013/09/27</td>
+                    <td>23:59 PM</td>
+                    <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Wilhelmine <span class="light">ID=100013137888836</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span>
+                    </td>
+                    <td>2013/06/28</td>
+                    <td>23:59 PM</td>
+                    <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Hubeen <span class="light">ID=100013137888837</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span>
+                    </td>
+                    <td>2013/05/28</td>
+                    <td>23:59 PM</td>
+                    <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Gerhold <span class="light">ID=100013137888808</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span></td>
+                      <td>2014/12/12</td>
+                      <td>23:59 PM</td>
+                      <td>
+                        <span>27 Jun 2019</span>
+                        <span>10 Oct 2020</span>
+                      </td>
+                      <td class="actions">
+                        <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                          <button type="button" class="btn btn-outline btn-default">
+                            <i class="icon wb-eye" aria-hidden="true"></i>
+                          </button>
+                          <div class="btn-group dropleft" role="group">
+                            <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                              <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                              <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                              <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td>Chester <span class="light">ID=100013137888809</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span></td>
+                      <td>2014/09/27</td>
+                      <td>23:59 PM</td>
+                      <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Melany <span class="light">ID=100013137888841</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span></td>
+                    <td>2014/06/28</td>
+                    <td>23:59 PM</td>
+                    <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Thea <span class="light">ID=100013137888842</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span>
+                    </td>
+                    <td>2014/11/12</td>
+                    <td>23:59 PM</td>
+                    <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Kreiger <span class="light">ID=100013137888843</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span></td>
+                      <td>2013/11/27</td>
+                      <td>23:59 PM</td>
+                      <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Shanel <span class="light">ID=100013137888844</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span></td>
+                      <td>2017/04/28</td>
+                      <td>23:59 PM</td>
+                      <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Mueller <span class="light">ID=100013137888845</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span></td>
+                      <td>2013/10/12</td>
+                      <td>23:59 PM</td>
+                      <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Clementina <span class="light">ID=100013137888890</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span></td>
+                      <td>2013/11/12</td>
+                      <td>23:59 PM</td>
+                      <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Johanna <span class="light">ID=100013137888846</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span></td>
+                      <td>2013/12/27</td>
+                      <td>23:59 PM</td>
+                      <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Elliottr <span class="light">ID=100013137888847</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span></td>
+                      <td>2014/08/28</td>
+                      <td>23:59 PM</td>
+                      <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Yasmine <span class="light">ID=100013137888848</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span></td>
+                      <td>2014/12/12</td>
+                      <td>23:59 PM</td>
+                      <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>Sammie <span class="light">ID=100013137888849</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span></td>
+                      <td>2014/03/29</td>
+                      <td>23:59 PM</td>
+                      <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Terrance <span class="light">ID=100013137888850</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span></td>
+                      <td>2014/10/27</td>
+                      <td>23:59 PM</td>
+                      <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>August <span class="light">ID=100013137888856</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span></td>
+                      <td>2013/11/12</td>
+                    <td>Rolfsonborough</td>
+                    <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Mckenna <span class="light">ID=100013137888857</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span></td>
+                      <td>2013/08/12</td>
+                      <td>23:59 PM</td>
+                      <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Adrianna <span class="light">ID=100013137888858</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span></td>
+                      <td>2014/02/26</td>
+                      <td>23:59 PM</td>
+                      <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Heath <span class="light">ID=100013137888859</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span></td>
+                      <td>2013/08/12</td>
+                      <td>23:59 PM</td>
+                      <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Alisa <span class="light">ID=100013137888860</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span></td>
+                      <td>2017/04/28</td>
+                      <td>23:59 PM</td>
+                      <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Treva <span class="light">ID=100013137888870</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span>
+                    </td>
+                    <td>2014/12/12</td>
+                    <td>23:59 PM</td>
+                    <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Nicolas <span class="light">ID=100013137888871</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span>
+                    </td>
+                    <td>2014/05/13</td>
+                    <td>23:59 PM</td>
+                    <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Gerhard <span class="light">ID=100013137888872</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span>
+                    </td>
+                    <td>2014/11/27</td>
+                    <td>23:59 PM</td>
+                    <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Monica <span class="light">ID=100013137888873</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span>
+                    </td>
+                    <td>2017/05/13</td>
+                    <td>23:59 PM</td>
+                    <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Lacey <span class="light">ID=100013137888874</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span>
+                    </td>
+                    <td>2014/11/27</td>
+                    <td>23:59 PM</td>
+                    <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Bret <span class="light">ID=100013137888875</span></td>
+                    <td>+5129055336
+                      <span>yevhen.ledo@mail.com</span>
+                    </td>
+                    <td>2013/05/28</td>
+                    <td>23:59 PM</td>
+                    <td>
+                      <span>27 Jun 2019</span>
+                      <span>10 Oct 2020</span>
+                    </td>
+                    <td class="actions">
+                      <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                        <button type="button" class="btn btn-outline btn-default">
+                          <i class="icon wb-eye" aria-hidden="true"></i>
+                        </button>
+                        <div class="btn-group dropleft" role="group">
+                          <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                            <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- End Panel Table Individual column searching -->
+        </div>
+        <div class="tab-pane" id="segmentInsights" role="tabpanel">
+          3
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+</div>
+
+<!-- End Page -->
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="site-footer-legal">© 2020 Gleantap, Inc</div>
+      <div class="site-footer-right">
+      </div>
+    </footer>
+    <!-- Core  -->
+    <script src="../assets/vendor/babel-external-helpers/babel-external-helpers.js"></script>
+    <script src="../assets/vendor/jquery/jquery.js"></script>
+    <script src="../assets/vendor/popper-js/umd/popper.min.js"></script>
+    <script src="../assets/vendor/bootstrap/bootstrap.js"></script>
+    <script src="../assets/vendor/animsition/animsition.js"></script>
+    <script src="../assets/vendor/mousewheel/jquery.mousewheel.js"></script>
+    <script src="../assets/vendor/asscrollbar/jquery-asScrollbar.js"></script>
+    <script src="../assets/vendor/asscrollable/jquery-asScrollable.js"></script>
+    <script src="../assets/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
+    
+    <!-- Plugins -->
+    <script src="../assets/vendor/switchery/switchery.js"></script>
+    <script src="../assets/vendor/intro-js/intro.js"></script>
+    <script src="../assets/vendor/screenfull/screenfull.js"></script>
+    <script src="../assets/vendor/slidepanel/jquery-slidePanel.js"></script>
+    <script src="../assets/vendor/skycons/skycons.js"></script>
+    <script src="../assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.js"></script>
+    <script src="../assets/vendor/chartist/chartist.js"></script>
+    <script src="../assets/vendor/aspieprogress/jquery-asPieProgress.min.js"></script>
+    <script src="../assets/vendor/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="../assets/vendor/jvectormap/maps/jquery-jvectormap-au-mill-en.js"></script>
+    <script src="../assets/vendor/matchheight/jquery.matchHeight-min.js"></script>
+    <script src="../assets/vendor/datatables.net/jquery.dataTables.js"></script>
+    
+    <script src="../assets/vendor/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="../assets/vendor/datatables.net-fixedheader/dataTables.fixedHeader.js"></script>
+    <script src="../assets/vendor/datatables.net-fixedcolumns/dataTables.fixedColumns.js"></script>
+    <script src="../assets/vendor/datatables.net-rowgroup/dataTables.rowGroup.js"></script>
+    <script src="../assets/vendor/datatables.net-scroller/dataTables.scroller.js"></script>
+    <script src="../assets/vendor/datatables.net-responsive/dataTables.responsive.js"></script>
+    <script src="../assets/vendor/datatables.net-responsive-bs4/responsive.bootstrap4.js"></script>
+    <script src="../assets/vendor/datatables.net-buttons/dataTables.buttons.js"></script>
+    <script src="../assets/vendor/datatables.net-buttons/buttons.html5.js"></script>
+    <script src="../assets/vendor/datatables.net-buttons/buttons.flash.js"></script>
+    <script src="../assets/vendor/datatables.net-buttons/buttons.print.js"></script>
+    <script src="../assets/vendor/datatables.net-buttons/buttons.colVis.js"></script>
+    <script src="../assets/vendor/datatables.net-buttons-bs4/buttons.bootstrap4.js"></script>
+    <script src="../assets/vendor/asrange/jquery-asRange.min.js"></script>
+    <script src="../assets/vendor/bootbox/bootbox.js"></script>
+    <script src="../assets/vendor/chartist/chartist.js"></script>
+    <script src="../assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.js"></script>
+    
+    <script>
+      (function() {
+        $(document).ready(function() {
+          // Solving the issue of displaying charts when switching page tabs
+          $('#page-tabs a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            $(e.currentTarget.hash).find('.ct-chart').each(function(el, tab) {
+              tab.__chartist__.update();
+            });
+          });
+          // end of Solving the issue of displaying charts when switching page tabs
+          // datatable js 
+          var defaults = Plugin.getDefaults("dataTable");
+          let table = $('#customerListTable');
+          var options = $.extend(true, {}, defaults, {
+            "searching": true,
+            "ordering": true,
+            "paging": true,
+            "autoWidth": true,
+            "fixedHeader": false,
+            "iDisplayLength": 5,
+            "aLengthMenu": [
+              [5, 10, 25, -1],
+              [5, 10, 25, "All"]
+            ],
+            "dom": "<'row custom-table-toolbar'<'col-sm-12 col-xl-4'f><'col-sm-12 col-xl-8'B>>" +
+      "<'row'<'col-sm-12'tr>>" +
+      "<'row custom-table-footer'<'col-sm-12 col-xl-4'li><'col-sm-12 col-xl-8'p>>",
+            "columnDefs": [{
+              "className": "dt-right",
+              "targets": [0] // First column
+            }],
+            "buttons": [
+              {
+                "extend": 'csv',
+                "className": 'btn btn-squared btn-primary btn-lg',
+                text: '<i class="icon wb-file"></i> Export CSV',
+              },
+              {
+                // "extend": "create", 
+                "className": 'btn btn-squared btn-success btn-lg',
+                "editor": "editor",
+                "text": "Add Customer",
+                action: function (e, node, config){
+                  $('#addCustomer').modal('show')
+                }
+              },
+              {
+                "className": 'btn btn-squared btn-outline btn-default btn-lg',
+                "extend": 'colvis',
+                "text": 'Date'
+              },
+              {
+                "className": 'btn btn-squared btn-outline btn-default btn-lg',
+                "extend": 'colvis',
+                "text": 'Device'
+              },
+              {
+                "className": 'btn btn-squared btn-outline btn-default btn-lg',
+                "extend": 'colvis',
+                "text": 'Columns'
+              },
+              
+              ]
+          });
+    
+          table.DataTable(options);
+        });
+      })();
+    </script>
+    
+    <!-- Scripts -->
+    <script src="../assets/js/Component.js"></script>
+    <script src="../assets/js/Plugin.js"></script>
+    <script src="../assets/js/Base.js"></script>
+    <script src="../assets/js/Config.js"></script>
+    
+    <script src="../assets/js/Section/Menubar.js"></script>
+    <script src="../assets/js/Section/GridMenu.js"></script>
+    <script src="../assets/js/Section/Sidebar.js"></script>
+    <script src="../assets/js/Section/PageAside.js"></script>
+    <script src="../assets/js/Plugin/menu.js"></script>
+    
+    <script src="../assets/js/config/colors.js"></script>
+    <script src="../assets/js/config/tour.js"></script>
+    <script>Config.set('assets', '../assets');</script>
+    
+    <!-- Page -->
+    <script src="../assets/js/Site.js"></script>
+    <script src="../assets/js/Plugin/asscrollable.js"></script>
+    <script src="../assets/js/Plugin/slidepanel.js"></script>
+    <script src="../assets/js/Plugin/switchery.js"></script>
+      <script src="../assets/js/Plugin/matchheight.js"></script>
+      <script src="../assets/js/Plugin/jvectormap.js"></script>
+      <script src="../assets/js/Plugin/datatables.js"></script>
+      <script src="../assets/js/Plugin/asscrollable.js"></script>
+    
+    <script src="../assets/examples/js/dashboard/v1.js"></script>
+    <script src="../assets/examples/js/charts/chartist.js"></script>
+    <!-- <script src="../assets/examples/js/tables/datatable.js"></script> -->
+    
+     <!-- MODALS -->
+    <div class="modal modal-addcustomer" id="addCustomer" aria-labelledby="addCustomerLabel" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-simple">
+            <form class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h3 class="modal-title" id="addCustomerLabel">Add Customer</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="col-12 form-group">
+                        <div class="input-group">
+                            <input type="search" class="form-control form-control-lg" id="inputSearchable"
+                                placeholder="Search ...">
+                            <button type="submit" class="input-search-btn">
+                                <i class="icon wb-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-12 form-group">
+                        <button type="button" class="btn btn-primary btn-block btn-lg"> <i class="icon wb-file"></i> Add
+                            Users Through CSV</button>
+                    </div>
+                </div>
+    
+                <div class="modal-body h-300 " data-plugin="scrollable">
+                    <div class="w-p100" data-role="container">
+                      <div class="w-p100" data-role="content">
+                        <ul class="list-group list-group-dividered " >
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-online" href="#">
+                                        <img src="../assets/examples/images/portraits/5.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Edward Fletcher</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-off" href="javascript:void(0)">
+                                        <img src="../assets/examples/images/portraits/6.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Justin Martin</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-away" href="javascript:void(0)">
+                                        <img src="../assets/examples/images/portraits/7.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Terrance Arnold</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" class="media">
+                                    <div class="avatar avatar-lg avatar-busy" href="#">
+                                        <img src="../assets/examples/images/portraits/8.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Heather Harper</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-online" href="#">
+                                        <img src="../assets/examples/images/portraits/5.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Edward Fletcher</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-off" href="javascript:void(0)">
+                                        <img src="../assets/examples/images/portraits/6.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Justin Martin</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-away" href="javascript:void(0)">
+                                        <img src="../assets/examples/images/portraits/7.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Terrance Arnold</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" class="media">
+                                    <div class="avatar avatar-lg avatar-busy" href="#">
+                                        <img src="../assets/examples/images/portraits/8.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Heather Harper</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-online" href="#">
+                                        <img src="../assets/examples/images/portraits/5.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Edward Fletcher</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-off" href="javascript:void(0)">
+                                        <img src="../assets/examples/images/portraits/6.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Justin Martin</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-away" href="javascript:void(0)">
+                                        <img src="../assets/examples/images/portraits/7.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Terrance Arnold</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" class="media">
+                                    <div class="avatar avatar-lg avatar-busy" href="#">
+                                        <img src="../assets/examples/images/portraits/8.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Heather Harper</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+    
+                        </div>
+                    </div>
+                </div>
+    
+            </form>
+        </div>
+    </div>  </body>
+</html>

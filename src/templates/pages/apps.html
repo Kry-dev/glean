@@ -1,0 +1,333 @@
+---
+title: Appointments Coming
+body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
+---
+
+{{#extend "layout-default"}}
+{{#content "css_vendor" mode="append"}}
+<!-- <link rel="stylesheet" href="{{assets}}/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css"> -->
+<link rel="stylesheet" href="{{assets}}/vendor/icheck/icheck.css">
+<link rel="stylesheet" href="{{assets}}/vendor/datatables.net-bs4/dataTables.bootstrap4.css">
+<link rel="stylesheet" href="{{assets}}/vendor/datatables.net-fixedheader-bs4/dataTables.fixedheader.bootstrap4.css">
+<link rel="stylesheet" href="{{assets}}/vendor/datatables.net-fixedcolumns-bs4/dataTables.fixedcolumns.bootstrap4.css">
+<link rel="stylesheet" href="{{assets}}/vendor/datatables.net-rowgroup-bs4/dataTables.rowgroup.bootstrap4.css">
+<link rel="stylesheet" href="{{assets}}/vendor/datatables.net-scroller-bs4/dataTables.scroller.bootstrap4.css">
+<link rel="stylesheet" href="{{assets}}/vendor/datatables.net-select-bs4/dataTables.select.bootstrap4.css">
+<link rel="stylesheet" href="{{assets}}/vendor/datatables.net-responsive-bs4/dataTables.responsive.bootstrap4.css">
+<link rel="stylesheet" href="{{assets}}/vendor/datatables.net-buttons-bs4/dataTables.buttons.bootstrap4.css">
+
+<!-- <link rel="stylesheet" href="{{assets}}/vendor/chartist/chartist.css"> -->
+<link rel="stylesheet" href="{{assets}}/vendor/asscrollable/asScrollable.css">
+<link rel="stylesheet" href="{{assets}}/vendor/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="{{assets}}/vendor/select2/select2.css">
+<link rel="stylesheet" href="{{assets}}/vendor/bootstrap-select/bootstrap-select.css">
+<!-- <link rel="stylesheet" href="{{assets}}/examples/css/uikit/modals.css"> -->
+{{/content}}
+
+{{#content "css" mode="prepend"}}
+<!-- <link rel="stylesheet" href="{{assets}}/examples/css/charts/chartist.css"> -->
+<link rel="stylesheet" href="{{assets}}/examples/css/tables/datatable.css">
+<!-- <link rel="stylesheet" href="{{assets}}/examples/css/dashboard/v1.css"> -->
+{{/content}}
+
+
+{{#content "fonts" mode="prepend"}}
+<link rel="stylesheet" href="{{assets}}/fonts/weather-icons/weather-icons.min.css">
+<link rel="stylesheet" href="{{assets}}/fonts/font-awesome/font-awesome.min.css">
+<link rel="stylesheet" href="{{assets}}/fonts/EuclideCircularA/EuclideCircularA.css">
+{{/content}}
+
+{{#content "js_vendor" mode="append"}}
+<!-- <script src="{{assets}}/vendor/skycons/skycons.js"></script> -->
+<!-- <script src="{{assets}}/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.js"></script> -->
+<!-- <script src="{{assets}}/vendor/chartist/chartist.js"></script> -->
+<!-- <script src="{{assets}}/vendor/aspieprogress/jquery-asPieProgress.min.js"></script> -->
+<!-- <script src="{{assets}}/vendor/jvectormap/jquery-jvectormap.min.js"></script> -->
+<!-- <script src="{{assets}}/vendor/jvectormap/maps/jquery-jvectormap-au-mill-en.js"></script> -->
+<!-- <script src="{{assets}}/vendor/matchheight/jquery.matchHeight-min.js"></script> -->
+<script src="{{assets}}/vendor/datatables.net/jquery.dataTables.js"></script>
+
+
+<script src="{{assets}}/vendor/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+<script src="{{assets}}/vendor/datatables.net-fixedheader/dataTables.fixedHeader.js"></script>
+<script src="{{assets}}/vendor/datatables.net-fixedcolumns/dataTables.fixedColumns.js"></script>
+<script src="{{assets}}/vendor/datatables.net-rowgroup/dataTables.rowGroup.js"></script>
+<script src="{{assets}}/vendor/datatables.net-scroller/dataTables.scroller.js"></script>
+<script src="{{assets}}/vendor/datatables.net-responsive/dataTables.responsive.js"></script>
+<script src="{{assets}}/vendor/datatables.net-responsive-bs4/responsive.bootstrap4.js"></script>
+<script src="{{assets}}/vendor/datatables.net-buttons/dataTables.buttons.js"></script>
+<script src="{{assets}}/vendor/datatables.net-buttons/buttons.html5.js"></script>
+<script src="{{assets}}/vendor/datatables.net-buttons/buttons.flash.js"></script>
+<script src="{{assets}}/vendor/datatables.net-buttons/buttons.print.js"></script>
+<script src="{{assets}}/vendor/datatables.net-buttons/buttons.colVis.js"></script>
+<script src="{{assets}}/vendor/datatables.net-buttons-bs4/buttons.bootstrap4.js"></script>
+<!-- <script src="{{assets}}/vendor/asrange/jquery-asRange.min.js"></script> -->
+<script src="{{assets}}/vendor/bootbox/bootbox.js"></script>
+<script src="{{assets}}/vendor/icheck/icheck.min.js"></script>
+<script src="{{assets}}/vendor/select2/select2.full.min.js"></script>
+<script src="{{assets}}/vendor/bootstrap-select/bootstrap-select.js"></script>
+<!-- <script src="{{assets}}/vendor/chartist/chartist.js"></script> -->
+<!-- <script src="{{assets}}/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.js"></script> -->
+
+{{/content}}
+
+{{#content "js" mode="append"}}
+<script src="{{assets}}/js/Plugin/matchheight.js"></script>
+<script src="{{assets}}/js/Plugin/jvectormap.js"></script>
+<script src="{{assets}}/js/Plugin/datatables.js"></script>
+<script src="{{assets}}/js/Plugin/asscrollable.js"></script>
+<script src="{{assets}}/js/Plugin/select2.js"></script>
+{{/content}}
+
+
+{{#content "scripts" mode="replace"}}
+<script src="{{assets}}/examples/js/dashboard/v1.js"></script>
+<script src="{{assets}}/examples/js/charts/chartist.js"></script>
+<!-- <script src="{{assets}}/examples/js/tables/datatable.js"></script> -->
+
+{{/content}}
+
+{{#content "body"}}
+
+<!-- Page -->
+<div class="page">
+  <div class="page-header">
+    <h1 class="page-title">Appointments Coming</h1>
+  </div>
+  <div class="page-content container-fluid">
+    <div class="row row-lg">
+      <div class="col-xl-8">
+        <div class="panel h-300">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-12 mb-20">
+                <h6>Segment Name</h6>
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-lg" placeholder="Enter Segment Name">
+                </div>
+              </div>
+              <div class="col-12">
+                <h3>Type</h3>
+                <ul class="list-unstyled list-inline m-0">
+                  <li class="list-inline-item">
+                    <input type="radio" class="icheckbox-green" id="inputRadioschecked" name="inputRadios"
+                      data-plugin="iCheck" data-radio-class="iradio_flat-green" checked />
+                    <label for="inputRadiosUnchecked">Dynamic</label>
+                  </li>
+                  <li class="list-inline-item">
+                    <input type="radio" class="icheckbox-green" id="inputRadiosUnChecked" name="inputRadios"
+                      data-plugin="iCheck" data-radio-class="iradio_flat-green" />
+                    <label for="inputRadiosChecked">Static</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4">
+        <div class="panel">
+          <div class="panel-body">
+            <h6>Total Size</h6>
+            <h4>20</h4>
+            <div class="row">
+              <div class="col-6 ">
+                <h6>Emails</h6>
+                <h4><a href="#">20 emails</a></h4>
+              </div>
+              <div class="col-6 ">
+                <h6>Phone</h6>
+                <h4>20</h4>
+              </div>
+              <div class="col-6 ">
+                <h6>Facebook</h6>
+                <h4><a href="#">www.namewebsite.com</a></h4>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <a href="#" class="d-block btn btn-lg btn-success">Calculate</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2 class="page-title my-30">Criteria <small class="text-uppercase text-gray">Segments User*</small></h2>
+    <div class="panel panel-form">
+      <div class="panel-body">
+        <h4 class="panle-title">All contacts matching these conditions</h4>
+        <div class="row row-lg">
+          <div class="col-11">
+            <div class="row">
+              <div class="form-group col-xl-6">
+                <select data-plugin="select2" class="form-contro input-lg form-control-lgl" data-placeholder="Check-In">
+                  <option>Check-In 1</option>
+                  <option>Check-In 2</option>
+                  <option>Check-In 3</option>
+                </select>
+              </div>
+              <div class="form-group col-xl-3">
+                <select data-plugin="select2" class="form-contro form-control-lgl" data-placeholder="Equal To">
+                  <option>Equal To 1</option>
+                  <option>Equal To 2</option>
+                  <option>Equal To 3</option>
+                </select>
+              </div>
+              <div class="form-group col-xl-3">
+                <select data-plugin="select2" class="form-contro form-control-lgl" data-placeholder="Equal To">
+                  <option>Equal To 1</option>
+                  <option>Equal To 2</option>
+                  <option>Equal To 3</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-1">
+            <a href="#" class="btn btn-lg btn-pure btn-default icon wb-trash"></a>
+          </div>
+        </div>
+        <div class="row row-lg">
+          <div class="col-11">
+            <div class="row form-group">
+              <div class="col-xl-2">
+                <select data-plugin="select2" class="form-contro form-control-lgl" data-placeholder="Check-In">
+                  <option>Check-In 1</option>
+                  <option>Check-In 2</option>
+                  <option>Check-In 3</option>
+                </select>
+              </div>
+              <div class="col-xl-2">
+                <select data-plugin="select2" class="form-contro form-control-lgl" data-placeholder="Equal To">
+                  <option>Equal To 1</option>
+                  <option>Equal To 2</option>
+                  <option>Equal To 3</option>
+                </select>
+              </div>
+              <div class="col-xl-2">
+                <select data-plugin="select2" class="form-contro form-control-lgl" data-placeholder="Equal To">
+                  <option>Equal To 1</option>
+                  <option>Equal To 2</option>
+                  <option>Equal To 3</option>
+                </select>
+              </div>
+              <div class="col-xl-2">
+                <select data-plugin="select2" class="form-contro form-control-lgl" data-placeholder="Equal To">
+                  <option>Equal To 1</option>
+                  <option>Equal To 2</option>
+                  <option>Equal To 3</option>
+                </select>
+              </div>
+              <div class="col-xl-2">
+                <select data-plugin="select2" class="form-contro form-control-lgl" data-placeholder="Equal To">
+                  <option>Equal To 1</option>
+                  <option>Equal To 2</option>
+                  <option>Equal To 3</option>
+                </select>
+              </div>
+              <div class="col-xl-2">
+                <select data-plugin="select2" class="form-contro form-control-lgl" data-placeholder="Equal To">
+                  <option>Equal To 1</option>
+                  <option>Equal To 2</option>
+                  <option>Equal To 3</option>
+                </select>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-1">
+            <a href="#" class="btn btn-lg btn-pure btn-default icon wb-trash"></a>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="panel-form-btn"><i class="icon wb-plus" aria-hidden="true"></i>Add new
+        condintions</button>
+    </div>
+    <div class="toggle-wrap">
+      <div class="onoffswitch">
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+        <label class="onoffswitch-label" for="myonoffswitch">
+          <span class="onoffswitch-inner">
+            <span class="onoffswitch-inner-on">Include</span>
+            <span class="onoffswitch-inner-off">Exclude</span>
+          </span>
+          <span class="onoffswitch-switch"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="panel panel-form">
+      <div class="panel-body">
+        <h4 class="panle-title">Excludes all contacts that match these conditions </h4>
+        <div class="row row-lg">
+          <div class="col-11">
+            <div class="row form-group">
+              <div class="col-xl-2">
+                <select data-plugin="select2" class="form-contro form-control-lgl" data-placeholder="Check-In">
+                  <option>Check-In 1</option>
+                  <option>Check-In 2</option>
+                  <option>Check-In 3</option>
+                </select>
+              </div>
+              <div class="col-xl-2">
+                <select data-plugin="select2" class="form-contro form-control-lgl" data-placeholder="Equal To">
+                  <option>Equal To 1</option>
+                  <option>Equal To 2</option>
+                  <option>Equal To 3</option>
+                </select>
+              </div>
+              <div class="col-xl-2">
+                <select data-plugin="select2" class="form-contro form-control-lgl" data-placeholder="Equal To">
+                  <option>Equal To 1</option>
+                  <option>Equal To 2</option>
+                  <option>Equal To 3</option>
+                </select>
+              </div>
+              <div class="col-xl-2">
+                <select data-plugin="select2" class="form-contro form-control-lgl" data-placeholder="Equal To">
+                  <option>Equal To 1</option>
+                  <option>Equal To 2</option>
+                  <option>Equal To 3</option>
+                </select>
+              </div>
+              <div class="col-xl-2">
+                <select data-plugin="select2" class="form-contro form-control-lgl" data-placeholder="Equal To">
+                  <option>Equal To 1</option>
+                  <option>Equal To 2</option>
+                  <option>Equal To 3</option>
+                </select>
+              </div>
+              <div class="col-xl-2">
+                <select data-plugin="select2" class="form-contro form-control-lgl" data-placeholder="Equal To">
+                  <option>Equal To 1</option>
+                  <option>Equal To 2</option>
+                  <option>Equal To 3</option>
+                </select>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-1">
+            <a href="#" class="btn btn-lg btn-pure btn-default icon wb-trash"></a>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="panel-form-btn"><i class="icon wb-plus" aria-hidden="true"></i>Add new
+        condintions</button>
+    </div>
+    <button type="button" class="btn btn-lg btn-primary my-3"><i class="icon wb-plus" aria-hidden="true"></i> Add New
+      Group</button>
+    <div class="row row-lg">
+      <div class="col-xl-3 offset-xl-4">
+        <a href="#" class="d-block  btn btn-lg btn-success">Save</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- End Page -->
+
+{{/content}}
+{{/extend}}

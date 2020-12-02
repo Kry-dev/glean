@@ -1,0 +1,22 @@
+.page {
+
+  [class^="icheckbox_"],
+  [class^="iradio_"] {
+    vertical-align: middle;
+  }
+
+  [class^="icheckbox_"] + label,
+  [class^="iradio_"] + label {
+    margin: .5rem;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 150%;
+    vertical-align: middle;
+  }
+
+  [class^="icheckbox_"].checked + label,
+  [class^="iradio_"].checked + label {
+    color: #000;
+  }
+}

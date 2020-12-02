@@ -1,0 +1,1084 @@
+---
+title: Segments
+body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
+---
+
+{{#extend "layout-default"}}
+{{#content "css_vendor" mode="append"}}
+<link rel="stylesheet" href="{{assets}}/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
+<link rel="stylesheet" href="{{assets}}/vendor/datatables.net-bs4/dataTables.bootstrap4.css">
+<link rel="stylesheet" href="{{assets}}/vendor/datatables.net-fixedheader-bs4/dataTables.fixedheader.bootstrap4.css">
+<link rel="stylesheet" href="{{assets}}/vendor/datatables.net-fixedcolumns-bs4/dataTables.fixedcolumns.bootstrap4.css">
+<link rel="stylesheet" href="{{assets}}/vendor/datatables.net-rowgroup-bs4/dataTables.rowgroup.bootstrap4.css">
+<link rel="stylesheet" href="{{assets}}/vendor/datatables.net-scroller-bs4/dataTables.scroller.bootstrap4.css">
+<link rel="stylesheet" href="{{assets}}/vendor/datatables.net-select-bs4/dataTables.select.bootstrap4.css">
+<link rel="stylesheet" href="{{assets}}/vendor/datatables.net-responsive-bs4/dataTables.responsive.bootstrap4.css">
+<link rel="stylesheet" href="{{assets}}/vendor/datatables.net-buttons-bs4/dataTables.buttons.bootstrap4.css">
+
+<!-- <link rel="stylesheet" href="{{assets}}/vendor/chartist/chartist.css"> -->
+<link rel="stylesheet" href="{{assets}}/vendor/asscrollable/asScrollable.css">
+<!-- <link rel="stylesheet" href="{{assets}}/examples/css/uikit/modals.css"> -->
+{{/content}}
+
+{{#content "css" mode="prepend"}}
+<!-- <link rel="stylesheet" href="{{assets}}/examples/css/charts/chartist.css"> -->
+<link rel="stylesheet" href="{{assets}}/examples/css/tables/datatable.css">
+<!-- <link rel="stylesheet" href="{{assets}}/examples/css/dashboard/v1.css"> -->
+{{/content}}
+
+
+{{#content "fonts" mode="prepend"}}
+<link rel="stylesheet" href="{{assets}}/fonts/weather-icons/weather-icons.min.css">
+<link rel="stylesheet" href="{{assets}}/fonts/font-awesome/font-awesome.min.css">
+<link rel="stylesheet" href="{{assets}}/fonts/EuclideCircularA/EuclideCircularA.css">
+{{/content}}
+
+{{#content "js_vendor" mode="append"}}
+<!-- <script src="{{assets}}/vendor/skycons/skycons.js"></script> -->
+<!-- <script src="{{assets}}/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.js"></script> -->
+<!-- <script src="{{assets}}/vendor/chartist/chartist.js"></script> -->
+<!-- <script src="{{assets}}/vendor/aspieprogress/jquery-asPieProgress.min.js"></script> -->
+<!-- <script src="{{assets}}/vendor/jvectormap/jquery-jvectormap.min.js"></script> -->
+<!-- <script src="{{assets}}/vendor/jvectormap/maps/jquery-jvectormap-au-mill-en.js"></script> -->
+<!-- <script src="{{assets}}/vendor/matchheight/jquery.matchHeight-min.js"></script> -->
+<script src="{{assets}}/vendor/datatables.net/jquery.dataTables.js"></script>
+
+<script src="{{assets}}/vendor/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+<script src="{{assets}}/vendor/datatables.net-fixedheader/dataTables.fixedHeader.js"></script>
+<script src="{{assets}}/vendor/datatables.net-fixedcolumns/dataTables.fixedColumns.js"></script>
+<script src="{{assets}}/vendor/datatables.net-rowgroup/dataTables.rowGroup.js"></script>
+<script src="{{assets}}/vendor/datatables.net-scroller/dataTables.scroller.js"></script>
+<script src="{{assets}}/vendor/datatables.net-responsive/dataTables.responsive.js"></script>
+<script src="{{assets}}/vendor/datatables.net-responsive-bs4/responsive.bootstrap4.js"></script>
+<script src="{{assets}}/vendor/datatables.net-buttons/dataTables.buttons.js"></script>
+<script src="{{assets}}/vendor/datatables.net-buttons/buttons.html5.js"></script>
+<script src="{{assets}}/vendor/datatables.net-buttons/buttons.flash.js"></script>
+<script src="{{assets}}/vendor/datatables.net-buttons/buttons.print.js"></script>
+<script src="{{assets}}/vendor/datatables.net-buttons/buttons.colVis.js"></script>
+<script src="{{assets}}/vendor/datatables.net-buttons-bs4/buttons.bootstrap4.js"></script>
+<!-- <script src="{{assets}}/vendor/asrange/jquery-asRange.min.js"></script> -->
+<script src="{{assets}}/vendor/bootbox/bootbox.js"></script>
+<!-- <script src="{{assets}}/vendor/chartist/chartist.js"></script> -->
+<!-- <script src="{{assets}}/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.js"></script> -->
+
+<script>
+  (function() {
+    $(document).ready(function() {
+      // datatable js 
+      var defaults = Plugin.getDefaults("dataTable");
+      let table = $('#segmentsListTable');
+      var options = $.extend(true, {}, defaults, {
+        "searching": true,
+        "ordering": true,
+        "paging": true,
+        "autoWidth": true,
+        "fixedHeader": false,
+        "iDisplayLength": 5,
+        "aLengthMenu": [
+          [5, 10, 25, -1],
+          [5, 10, 25, "All"]
+        ],
+        //Position from top to bottom! Custom Toolbar -> table -> Custom Table Footer
+        "dom": "'<'row custom-table-toolbar'<'col-sm-12 col-xl-6'f><'col-sm-12 col-xl-4'B>>" +
+        "<'row create'>" +
+        "<'row'<'col-sm-12'tr>>" +
+        "<'row custom-table-footer'<'col-sm-12 col-xl-4'li><'col-sm-12 col-xl-8'p>>",
+        "columnDefs": [{
+          "className": "dt-right",
+          "targets": [0] // First column
+        }],
+
+        //Buttons in toolbar
+        "buttons": [
+          {
+            "className": 'btn btn-squared btn-outline btn-default btn-lg',
+            "extend": 'colvis',
+            "text": 'Date'
+          },
+          {
+            "className": 'btn btn-squared btn-outline btn-default btn-lg',
+            "extend": 'colvis',
+            "text": 'Members'
+          },
+          {
+            "className": 'btn btn-squared btn-outline btn-default btn-lg',
+            "extend": 'colvis',
+            "text": 'Sms opt-ins'
+          },
+          
+          ]
+      });
+      table.DataTable(options);
+      $('div.dataTables_filter label,div.dataTables_filter input').addClass('w-p100');
+      $("div.create").html(`
+          <div class="create-box"> 
+            <div class="dropdown">
+              <button type="button" class="btn btn-lg btn-outline btn-primary dropdown-toggle p-10" id="exampleBadagesDropdown" data-toggle="dropdown" aria-expanded="false"><i class="icon wb-plus" aria-hidden="true"></i></button>
+              <div class="dropdown-menu w-400 py-10 px-20" aria-labelledby="exampleBadagesDropdown" role="menu">
+                <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked1"><label for="inputUnchecked1">test name</label></div>
+                <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked2"><label for="inputUnchecked2">test name</label></div>
+                <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked3"><label for="inputUnchecked3">test name</label></div>
+                <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked4"><label for="inputUnchecked4">test name</label></div>
+                <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked5"><label for="inputUnchecked5">test name</label></div>
+                <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked6"><label for="inputUnchecked6">test name</label></div>
+                <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked7"><label for="inputUnchecked7">test name</label></div>
+                <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked8"><label for="inputUnchecked8">test name</label></div>
+                <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked9"><label for="inputUnchecked9">test name</label></div>
+                <div class="py-10">
+                  <a class="dropdown-item btn btn-primary btn-lg text-center p-16" href="javascript:void(0)" role="menuitem">Create New</a>
+                </div>
+                
+              </div>
+            </div>
+            <div href="#" class="create-box-list scrollable-horizontal" data-plugin="scrollable" data-direction="horizontal">
+              <div data-role="container">
+                <div  data-role="content">
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                  <a href="#"class="btn btn-outline btn-primary">test name</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-lg btn-primary my-3"><i class="icon wb-plus" aria-hidden="true"></i> Create New Segment</button>
+        </div>`
+        );
+    });
+  })();
+</script>
+{{/content}}
+
+{{#content "js" mode="append"}}
+  <script src="{{assets}}/js/Plugin/matchheight.js"></script>
+  <script src="{{assets}}/js/Plugin/jvectormap.js"></script>
+  <script src="{{assets}}/js/Plugin/datatables.js"></script>
+  <script src="{{assets}}/js/Plugin/asscrollable.js"></script>
+{{/content}}
+
+
+{{#content "scripts" mode="replace"}}
+<script src="{{assets}}/examples/js/dashboard/v1.js"></script>
+<script src="{{assets}}/examples/js/charts/chartist.js"></script>
+<!-- <script src="{{assets}}/examples/js/tables/datatable.js"></script> -->
+
+{{/content}}
+
+{{#content "body"}}
+
+<!-- Page -->
+<div class="page">
+  <div class="page-header">
+    <h1 class="page-title">Segments</h1>
+  </div>
+  <div class="page-content container-fluid">
+     <!-- Table Individual column searching -->
+     <div class="custom-table">
+      <div class="custom-table-body">
+        <table class="table table-hover dataTable w-full" id="segmentsListTable">
+          <!-- <tfoot>
+            <tr>
+              <th>User Name</th>
+              <th>Phone & Mail</th>
+              <th>List & Date</th>
+              <th>Sessions</th>
+              <th>Add & Last Access</th>
+              <th>Action</th>
+            </tr>
+          </tfoot> -->
+          <thead>
+            <tr>
+              <th>User Name</th>
+              <th>Email status</th>
+              <th>Phone</th>
+              <th>Facebook ID</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Ada Hoppe</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Ada Hoppe</h4></a>
+                    <div class="mt-5">
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Herman Beck</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Mary Adams</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Caleb Richards</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">June Lane</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Edward Fletcher</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Crystal Bates</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Nathan Watts</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Heather Harper</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Edward Fletcher</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Nick Hoppe</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Ada Hoppe</h4></a>
+                    <div class="mt-5">
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Herman Beck</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Mary Adams</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Caleb Richards</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">June Lane</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Edward Fletcher</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Crystal Bates</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Nathan Watts</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Heather Harper</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="media-body">
+                    <a href="javascript:void(0)"><h4 class="my-0">Edward Fletcher</h4></a>
+                    <div class="mt-5">
+                    
+                      <span class="badge badge-primary">tag name</span>
+                      <span class="badge badge-warning">tag name</span>
+                      <span class="badge badge-danger">tag name</span>
+                      <span class="badge badge-success">tag name</span>
+                      <a class="btn btn-sm btn-icon btn-primary" href="javascript:void(0)" role="button">
+                        <i class="icon wb-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>yevhen.ledo@mail.com</td>
+              <td>+5129055336</td>
+              <td><a href="#">ID=100013137888840</a></td>
+              
+              <td class="actions">
+                <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
+                  <button type="button" class="btn btn-outline btn-default">
+                    <i class="icon wb-eye" aria-hidden="true"></i>
+                  </button>
+                  <div class="btn-group dropleft" role="group">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                      <i class="icon wb-more-vertical" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- End Panel Table Individual column searching -->
+  </div>
+  
+</div>
+
+<!-- End Page -->
+
+{{/content}}
+{{/extend}}

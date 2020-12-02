@@ -1,0 +1,646 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="bootstrap admin template">
+    <meta name="author" content="">
+    
+    <title>Image Cropping | Remark Admin Template</title>
+    
+    <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../../assets/images/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap-extend.min.css">
+    <link rel="stylesheet" href="../../assets/css/site.min.css">
+    
+    <!-- Plugins -->
+    <link rel="stylesheet" href="../../assets/vendor/animsition/animsition.css">
+    <link rel="stylesheet" href="../../assets/vendor/asscrollable/asScrollable.css">
+    <link rel="stylesheet" href="../../assets/vendor/switchery/switchery.css">
+    <link rel="stylesheet" href="../../assets/vendor/intro-js/introjs.css">
+    <link rel="stylesheet" href="../../assets/vendor/slidepanel/slidePanel.css">
+    <link rel="stylesheet" href="../../assets/vendor/flag-icon-css/flag-icon.css">
+        <link rel="stylesheet" href="../../assets/vendor/cropper/cropper.css">
+        <link rel="stylesheet" href="../../assets/examples/css/forms/image-cropping.css">
+    
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../../assets/fonts/web-icons/web-icons.min.css">
+    <link rel="stylesheet" href="../../assets/fonts/brand-icons/brand-icons.min.css">
+    
+    <!--[if lt IE 9]>
+    <script src="../../assets/vendor/html5shiv/html5shiv.min.js"></script>
+    <![endif]-->
+    
+    <!--[if lt IE 10]>
+    <script src="../../assets/vendor/media-match/media.match.min.js"></script>
+    <script src="../../assets/vendor/respond/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Scripts -->
+    <script src="../../assets/vendor/breakpoints/breakpoints.js"></script>
+    <script>
+      Breakpoints();
+    </script>
+  </head>
+  <body class="animsition">
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="site-menubar site-menubar-light">
+      <div class="site-menubar-brand site-gridmenu-toggle" data-toggle="gridmenu">
+          <span class="site-menubar-brand-logo">G</span>
+          <span class="site-menubar-brand-text">Gleantap</span>
+      </div>
+      <div class="site-menubar-toggle" id="toggleMenubar">
+        <a class="site-menubar-toggle-link" data-toggle="menubar" href="#" role="button">
+          <i class="icon hamburger hamburger-arrow-left">
+            <span class="sr-only">Toggle menubar</span>
+            <span class="hamburger-bar"></span>
+          </i>
+        </a>
+      </div>
+      <div class="site-menubar-body">
+        <div>
+          <div>
+    
+            <ul class="site-menu" data-plugin="menu">
+            
+            
+              <li class="site-menu-item active">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
+                  <span class="site-menu-title">Dashboard</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-file" aria-hidden="true"></i>
+                  <span class="site-menu-title">Pages</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-bookmark" aria-hidden="true"></i>
+                  <span class="site-menu-title">Basic UI</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-hammer" aria-hidden="true"></i>
+                  <span class="site-menu-title">Advanced UI</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-plugin" aria-hidden="true"></i>
+                  <span class="site-menu-title">Structure</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-extension" aria-hidden="true"></i>
+                  <span class="site-menu-title">Widgets</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-library" aria-hidden="true"></i>
+                  <span class="site-menu-title">Forms</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-table" aria-hidden="true"></i>
+                  <span class="site-menu-title">Tables</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-pie-chart" aria-hidden="true"></i>
+                  <span class="site-menu-title">Chart</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-grid-4" aria-hidden="true"></i>
+                  <span class="site-menu-title">Apps</span>
+                </a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </div>
+    
+      <div class="site-menubar-footer">
+        <div class="dropdown show">
+          <a class="site-menubar-avatar" data-toggle="dropdown" href="#" aria-expanded="true" data-animation="scale-up"
+            role="button">
+            <span class="avatar avatar-online">
+              <img src="../../assets/portraits/5.jpg" alt="...">
+              <i></i>
+            </span>
+          </a>
+          <div class="dropdown-menu show" role="menu">
+            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i>
+              Profile</a>
+            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-payment"
+                aria-hidden="true"></i> Billing</a>
+            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-settings"
+                aria-hidden="true"></i> Settings</a>
+            <div class="dropdown-divider" role="presentation"></div>
+            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-power"
+                aria-hidden="true"></i> Logout</a>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    <div class="site-gridmenu">
+      <div>
+        <div>
+          <ul>
+            <li>
+              <a href="../apps/mailbox/mailbox.html">
+                <i class="icon wb-envelope"></i>
+                <span>Mailbox</span>
+              </a>
+            </li>
+            <li>
+              <a href="../apps/calendar/calendar.html">
+                <i class="icon wb-calendar"></i>
+                <span>Calendar</span>
+              </a>
+            </li>
+            <li>
+              <a href="../apps/contacts/contacts.html">
+                <i class="icon wb-user"></i>
+                <span>Contacts</span>
+              </a>
+            </li>
+            <li>
+              <a href="../apps/media/overview.html">
+                <i class="icon wb-camera"></i>
+                <span>Media</span>
+              </a>
+            </li>
+            <li>
+              <a href="../apps/documents/categories.html">
+                <i class="icon wb-order"></i>
+                <span>Documents</span>
+              </a>
+            </li>
+            <li>
+              <a href="../apps/projects/projects.html">
+                <i class="icon wb-image"></i>
+                <span>Project</span>
+              </a>
+            </li>
+            <li>
+              <a href="../apps/forum/forum.html">
+                <i class="icon wb-chat-group"></i>
+                <span>Forum</span>
+              </a>
+            </li>
+            <li>
+              <a href="../index.html">
+                <i class="icon wb-dashboard"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page -->
+    <div class="page">
+      <div class="page-header">
+        <h1 class="page-title">Image Cropping</h1>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="javascript:void(0)">Forms</a></li>
+          <li class="breadcrumb-item active">Image Cropping</li>
+        </ol>
+        <div class="page-header-actions">
+          <a class="btn btn-sm btn-default btn-outline btn-round" href="https://github.com/fengyuanchen/cropper"
+            target="_blank">
+        <i class="icon wb-link" aria-hidden="true"></i>
+        <span class="hidden-sm-down">Official Website</span>
+      </a>
+        </div>
+      </div>
+
+      <div class="page-content">
+        <!-- Panel Full Demo -->
+        <div class="panel">
+          <div class="panel-heading">
+            <h3 class="panel-title">Full Demo (16:9)</h3>
+          </div>
+          <div class="panel-body container-fluid">
+            <div class="row">
+              <div class="col-lg-8">
+                <div class="cropper text-center" id="exampleFullCropper">
+                  <img src="../../assets/photos/placeholder.png" alt="...">
+                </div>
+                <div class="cropper-toolbar text-center">
+                  <div class="btn-group mb-20">
+                    <button type="button" class="btn btn-primary" data-cropper-method="zoom" data-option="0.1"
+                      data-toggle="tooltip" data-container="body" title="Zoom In">
+                      <span class="cropper-tooltip" title="zoom in">
+                        <i class="icon wb-zoom-in"></i>
+                      </span>
+                    </button>
+                    <button type="button" class="btn btn-primary" data-cropper-method="zoom" data-option="-0.1"
+                      data-toggle="tooltip" data-container="body" title="Zoom Out">
+                      <span class="cropper-tooltip" title="zoom out">
+                        <i class="icon wb-zoom-out"></i>
+                      </span>
+                    </button>
+                    <button type="button" class="btn btn-primary" data-cropper-method="rotate" data-option="-90"
+                      data-toggle="tooltip" data-container="body" title="Turn Left">
+                      <span class="cropper-tooltip" title="rotate left 90°">
+                        <i class="icon wb-arrow-left cropper-flip-horizontal"></i>
+                      </span>
+                    </button>
+                    <button type="button" class="btn btn-primary" data-cropper-method="rotate" data-option="90"
+                      data-toggle="tooltip" data-container="body" title="Turn Right">
+                      <span class="cropper-tooltip" title="rotate right 90°">
+                        <i class="icon wb-arrow-right"></i>
+                      </span>
+                    </button>
+                    <button type="button" class="btn btn-primary" data-cropper-method="rotate" data-option="-5"
+                      data-toggle="tooltip" data-container="body" title="Rotate Left">
+                      <span class="cropper-tooltip" title="rotate left 90°">
+                        <i class="icon wb-refresh cropper-flip-horizontal"></i>
+                      </span>
+                    </button>
+                    <button type="button" class="btn btn-primary" data-cropper-method="rotate" data-option="5"
+                      data-toggle="tooltip" data-container="body" title="Rotate Right">
+                      <span class="cropper-tooltip" title="rotate right 90°">
+                        <i class="icon wb-reload" aria-hidden="true"></i>
+                      </span>
+                    </button>
+                  </div>
+
+                  <div class="btn-group mb-20">
+                    <button type="button" class="btn btn-primary" data-cropper-method="setDragMode"
+                      data-option="move" data-toggle="tooltip" data-container="body"
+                      title="Move">
+                      <span class="cropper-tooltip" title="move">
+                        <i class="icon wb-move" aria-hidden="true"></i>
+                      </span>
+                    </button>
+                    <button type="button" class="btn btn-primary" data-cropper-method="setDragMode"
+                      data-option="crop" data-toggle="tooltip" data-container="body"
+                      title="Crop">
+                      <span class="cropper-tooltip" title="Crop">
+                        <i class="icon wb-crop" aria-hidden="true"></i>
+                      </span>
+                    </button>
+                    <button type="button" class="btn btn-primary" data-cropper-method="getCroppedCanvas"
+                      data-option='{ "width": 320, "height": 180 }' data-toggle="tooltip"
+                      data-container="body" title="Get Image">
+                      <span class="cropper-tooltip" title="Get Image">
+                        <i class="icon wb-image" aria-hidden="true"></i>
+                      </span>
+                    </button>
+                    <button type="button" class="btn btn-primary" data-cropper-method="clear" data-toggle="tooltip"
+                      data-container="body" title="Clear">
+                      <span class="cropper-tooltip" title="clear">
+                        <i class="icon wb-close" aria-hidden="true"></i>
+                      </span>
+                    </button>
+                    <label class="btn btn-primary mb-0" data-toggle="tooltip" for="inputImage" data-container="body"
+                      title="Upload File">
+                      <input type="file" class="hidden-xs-up" id="inputImage" name="file" accept="image/*">
+                      <span class="cropper-tooltip" title="Import image with FileReader">
+                        <i class="icon wb-upload" aria-hidden="true"></i>
+                      </span>
+                    </label>
+                  </div>
+
+                  <!-- Modal -->
+                  <div class="modal fade docs-cropped" id="getDataURLModal" aria-hidden="true" aria-labelledby="getDataURLTitle"
+                    role="dialog" tabindex="-1">
+                    <div class="modal-dialog modal-simple">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title" id="getDataURLTitle">Cropped</h4>
+                        </div>
+                        <div class="modal-body"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Modal -->
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="cropper-preview clearfix" id="exampleFullCropperPreview">
+                  <div class="img-preview preview-lg"></div>
+                  <div class="img-preview preview-md"></div>
+                  <div class="img-preview preview-sm"></div>
+                  <div class="img-preview preview-xs"></div>
+                </div>
+                <h4>Data:</h4>
+                <div class="cropper-data">
+                  <div class="input-group mb-15">
+                    <label class="input-group-prepend" for="inputDataX">
+                      <span class="input-group-text">X</span>
+                    </label>
+                    <input type="number" class="form-control" id="inputDataX" name="inputNumbers" placeholder="x">
+                    <div class="input-group-append">
+                      <span class="input-group-text">px</span>
+                    </div>
+                  </div>
+                  <div class="input-group mb-15">
+                    <label class="input-group-prepend" for="inputDataY">
+                      <span class="input-group-text">Y</span>
+                    </label>
+                    <input type="number" class="form-control" id="inputDataY" name="inputNumbers" placeholder="y">
+                    <div class="input-group-append">
+                      <span class="input-group-text">px</span>
+                    </div>
+                  </div>
+                  <div class="input-group mb-15">
+                    <label class="input-group-prepend" for="inputDataWidth">
+                      <span class="input-group-text">Width</span>
+                    </label>
+                    <input type="number" class="form-control" id="inputDataWidth" name="inputNumbers"
+                      placeholder="width">
+                    <div class="input-group-append">
+                      <span class="input-group-text">px</span>
+                    </div>
+                  </div>
+                  <div class="input-group mb-15">
+                    <label class="input-group-prepend" for="inputDataHeight">
+                      <span class="input-group-text">Height</span>
+                    </label>
+                    <input type="number" class="form-control" id="inputDataHeight" name="inputNumbers"
+                      placeholder="height">
+                    <div class="input-group-append">
+                      <span class="input-group-text">px</span>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary btn-block" id="setCropperData" type="button">Set Data</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Panel Full Demo -->
+
+        <!-- Panel Simple Demo -->
+        <div class="panel">
+          <div class="panel-heading">
+            <h3 class="panel-title">Simple Demo</h3>
+          </div>
+          <div class="panel-body container-fluid">
+            <div class="row">
+              <div class="col-lg-9">
+                <div class="cropper" id="simpleCropper">
+                  <img src="../../assets/photos/placeholder.png" alt="...">
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="cropper-preview clearfix" id="simpleCropperPreview">
+                  <div class="img-preview preview-lg"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Panel Simple Demo -->
+      </div>
+    </div>
+    <!-- End Page -->
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="site-footer-legal">© 2020 Gleantap, Inc</div>
+      <div class="site-footer-right">
+      </div>
+    </footer>
+    <!-- Core  -->
+    <script src="../../assets/vendor/babel-external-helpers/babel-external-helpers.js"></script>
+    <script src="../../assets/vendor/jquery/jquery.js"></script>
+    <script src="../../assets/vendor/popper-js/umd/popper.min.js"></script>
+    <script src="../../assets/vendor/bootstrap/bootstrap.js"></script>
+    <script src="../../assets/vendor/animsition/animsition.js"></script>
+    <script src="../../assets/vendor/mousewheel/jquery.mousewheel.js"></script>
+    <script src="../../assets/vendor/asscrollbar/jquery-asScrollbar.js"></script>
+    <script src="../../assets/vendor/asscrollable/jquery-asScrollable.js"></script>
+    <script src="../../assets/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
+    
+    <!-- Plugins -->
+    <script src="../../assets/vendor/switchery/switchery.js"></script>
+    <script src="../../assets/vendor/intro-js/intro.js"></script>
+    <script src="../../assets/vendor/screenfull/screenfull.js"></script>
+    <script src="../../assets/vendor/slidepanel/jquery-slidePanel.js"></script>
+        <script src="../../assets/vendor/cropper/cropper.min.js"></script>
+    
+    <!-- Scripts -->
+    <script src="../../assets/js/Component.js"></script>
+    <script src="../../assets/js/Plugin.js"></script>
+    <script src="../../assets/js/Base.js"></script>
+    <script src="../../assets/js/Config.js"></script>
+    
+    <script src="../../assets/js/Section/Menubar.js"></script>
+    <script src="../../assets/js/Section/GridMenu.js"></script>
+    <script src="../../assets/js/Section/Sidebar.js"></script>
+    <script src="../../assets/js/Section/PageAside.js"></script>
+    <script src="../../assets/js/Plugin/menu.js"></script>
+    
+    <script src="../../assets/js/config/colors.js"></script>
+    <script src="../../assets/js/config/tour.js"></script>
+    <script>Config.set('assets', '../../assets');</script>
+    
+    <!-- Page -->
+    <script src="../../assets/js/Site.js"></script>
+    <script src="../../assets/js/Plugin/asscrollable.js"></script>
+    <script src="../../assets/js/Plugin/slidepanel.js"></script>
+    <script src="../../assets/js/Plugin/switchery.js"></script>
+    
+        <script src="../../assets/examples/js/forms/image-cropping.js"></script>
+     <!-- MODALS -->
+    <div class="modal modal-addcustomer" id="addCustomer" aria-labelledby="addCustomerLabel" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-simple">
+            <form class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h3 class="modal-title" id="addCustomerLabel">Add Customer</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="col-12 form-group">
+                        <div class="input-group">
+                            <input type="search" class="form-control form-control-lg" id="inputSearchable"
+                                placeholder="Search ...">
+                            <button type="submit" class="input-search-btn">
+                                <i class="icon wb-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-12 form-group">
+                        <button type="button" class="btn btn-primary btn-block btn-lg"> <i class="icon wb-file"></i> Add
+                            Users Through CSV</button>
+                    </div>
+                </div>
+    
+                <div class="modal-body h-300 " data-plugin="scrollable">
+                    <div class="w-p100" data-role="container">
+                      <div class="w-p100" data-role="content">
+                        <ul class="list-group list-group-dividered " >
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-online" href="#">
+                                        <img src="../../assets/examples/images/portraits/5.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Edward Fletcher</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-off" href="javascript:void(0)">
+                                        <img src="../../assets/examples/images/portraits/6.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Justin Martin</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-away" href="javascript:void(0)">
+                                        <img src="../../assets/examples/images/portraits/7.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Terrance Arnold</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" class="media">
+                                    <div class="avatar avatar-lg avatar-busy" href="#">
+                                        <img src="../../assets/examples/images/portraits/8.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Heather Harper</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-online" href="#">
+                                        <img src="../../assets/examples/images/portraits/5.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Edward Fletcher</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-off" href="javascript:void(0)">
+                                        <img src="../../assets/examples/images/portraits/6.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Justin Martin</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-away" href="javascript:void(0)">
+                                        <img src="../../assets/examples/images/portraits/7.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Terrance Arnold</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" class="media">
+                                    <div class="avatar avatar-lg avatar-busy" href="#">
+                                        <img src="../../assets/examples/images/portraits/8.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Heather Harper</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-online" href="#">
+                                        <img src="../../assets/examples/images/portraits/5.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Edward Fletcher</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-off" href="javascript:void(0)">
+                                        <img src="../../assets/examples/images/portraits/6.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Justin Martin</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-away" href="javascript:void(0)">
+                                        <img src="../../assets/examples/images/portraits/7.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Terrance Arnold</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" class="media">
+                                    <div class="avatar avatar-lg avatar-busy" href="#">
+                                        <img src="../../assets/examples/images/portraits/8.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Heather Harper</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+    
+                        </div>
+                    </div>
+                </div>
+    
+            </form>
+        </div>
+    </div>  </body>
+</html>

@@ -1,0 +1,927 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="bootstrap admin template">
+    <meta name="author" content="">
+    
+    <title>Progress Bars | Remark Admin Template</title>
+    
+    <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../../assets/images/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap-extend.min.css">
+    <link rel="stylesheet" href="../../assets/css/site.min.css">
+    
+    <!-- Plugins -->
+    <link rel="stylesheet" href="../../assets/vendor/animsition/animsition.css">
+    <link rel="stylesheet" href="../../assets/vendor/asscrollable/asScrollable.css">
+    <link rel="stylesheet" href="../../assets/vendor/switchery/switchery.css">
+    <link rel="stylesheet" href="../../assets/vendor/intro-js/introjs.css">
+    <link rel="stylesheet" href="../../assets/vendor/slidepanel/slidePanel.css">
+    <link rel="stylesheet" href="../../assets/vendor/flag-icon-css/flag-icon.css">
+        <link rel="stylesheet" href="../../assets/examples/css/uikit/progress-bars.css">
+    
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../../assets/fonts/web-icons/web-icons.min.css">
+    <link rel="stylesheet" href="../../assets/fonts/brand-icons/brand-icons.min.css">
+    
+    <!--[if lt IE 9]>
+    <script src="../../assets/vendor/html5shiv/html5shiv.min.js"></script>
+    <![endif]-->
+    
+    <!--[if lt IE 10]>
+    <script src="../../assets/vendor/media-match/media.match.min.js"></script>
+    <script src="../../assets/vendor/respond/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Scripts -->
+    <script src="../../assets/vendor/breakpoints/breakpoints.js"></script>
+    <script>
+      Breakpoints();
+    </script>
+  </head>
+  <body class="animsition">
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="site-menubar site-menubar-light">
+      <div class="site-menubar-brand site-gridmenu-toggle" data-toggle="gridmenu">
+          <span class="site-menubar-brand-logo">G</span>
+          <span class="site-menubar-brand-text">Gleantap</span>
+      </div>
+      <div class="site-menubar-toggle" id="toggleMenubar">
+        <a class="site-menubar-toggle-link" data-toggle="menubar" href="#" role="button">
+          <i class="icon hamburger hamburger-arrow-left">
+            <span class="sr-only">Toggle menubar</span>
+            <span class="hamburger-bar"></span>
+          </i>
+        </a>
+      </div>
+      <div class="site-menubar-body">
+        <div>
+          <div>
+    
+            <ul class="site-menu" data-plugin="menu">
+            
+            
+              <li class="site-menu-item active">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
+                  <span class="site-menu-title">Dashboard</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-file" aria-hidden="true"></i>
+                  <span class="site-menu-title">Pages</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-bookmark" aria-hidden="true"></i>
+                  <span class="site-menu-title">Basic UI</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-hammer" aria-hidden="true"></i>
+                  <span class="site-menu-title">Advanced UI</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-plugin" aria-hidden="true"></i>
+                  <span class="site-menu-title">Structure</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-extension" aria-hidden="true"></i>
+                  <span class="site-menu-title">Widgets</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-library" aria-hidden="true"></i>
+                  <span class="site-menu-title">Forms</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-table" aria-hidden="true"></i>
+                  <span class="site-menu-title">Tables</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-pie-chart" aria-hidden="true"></i>
+                  <span class="site-menu-title">Chart</span>
+                </a>
+              </li>
+              <li class="site-menu-item ">
+                <a href="javascript:void(0)">
+                  <i class="site-menu-icon wb-grid-4" aria-hidden="true"></i>
+                  <span class="site-menu-title">Apps</span>
+                </a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </div>
+    
+      <div class="site-menubar-footer">
+        <div class="dropdown show">
+          <a class="site-menubar-avatar" data-toggle="dropdown" href="#" aria-expanded="true" data-animation="scale-up"
+            role="button">
+            <span class="avatar avatar-online">
+              <img src="../../assets/portraits/5.jpg" alt="...">
+              <i></i>
+            </span>
+          </a>
+          <div class="dropdown-menu show" role="menu">
+            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i>
+              Profile</a>
+            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-payment"
+                aria-hidden="true"></i> Billing</a>
+            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-settings"
+                aria-hidden="true"></i> Settings</a>
+            <div class="dropdown-divider" role="presentation"></div>
+            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-power"
+                aria-hidden="true"></i> Logout</a>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    <div class="site-gridmenu">
+      <div>
+        <div>
+          <ul>
+            <li>
+              <a href="../apps/mailbox/mailbox.html">
+                <i class="icon wb-envelope"></i>
+                <span>Mailbox</span>
+              </a>
+            </li>
+            <li>
+              <a href="../apps/calendar/calendar.html">
+                <i class="icon wb-calendar"></i>
+                <span>Calendar</span>
+              </a>
+            </li>
+            <li>
+              <a href="../apps/contacts/contacts.html">
+                <i class="icon wb-user"></i>
+                <span>Contacts</span>
+              </a>
+            </li>
+            <li>
+              <a href="../apps/media/overview.html">
+                <i class="icon wb-camera"></i>
+                <span>Media</span>
+              </a>
+            </li>
+            <li>
+              <a href="../apps/documents/categories.html">
+                <i class="icon wb-order"></i>
+                <span>Documents</span>
+              </a>
+            </li>
+            <li>
+              <a href="../apps/projects/projects.html">
+                <i class="icon wb-image"></i>
+                <span>Project</span>
+              </a>
+            </li>
+            <li>
+              <a href="../apps/forum/forum.html">
+                <i class="icon wb-chat-group"></i>
+                <span>Forum</span>
+              </a>
+            </li>
+            <li>
+              <a href="../index.html">
+                <i class="icon wb-dashboard"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page -->
+    <div class="page">
+      <div class="page-header">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item active">Basic UI</li>
+        </ol>
+        <h1 class="page-title">Progress Bars</h1>
+        <div class="page-header-actions">
+          <a class="btn btn-sm btn-inverse btn-round" href="https://github.com/amazingSurge/jquery-asProgress"
+            target="_blank">
+        <i class="icon wb-link" aria-hidden="true"></i>
+        <span class="hidden-sm-down">Official Website</span>
+      </a>
+        </div>
+      </div>
+
+      <div class="page-content">
+        <!-- Panel -->
+        <div class="panel">
+          <div class="panel-heading">
+            <h3 class="panel-title">Progress</h3>
+          </div>
+          <div class="panel-body container-fluid">
+
+            <!-- Example Styles -->
+            <div class="example-wrap">
+              <h4 class="example-title">Styles</h4>
+              <p>Progress bar is a graphical control element used to visualize the
+                progression of an extended computer operation, such as a download,
+                file transfer, or professional skill and work task. The graphic
+                is accompanied by a textual representation of the progress in a
+                percent format.</p>
+              <div class="row row-lg">
+                <div class="col-md-4">
+                  <div class="example-wrap">
+                    <div class="example">
+                      <h5>Basic Progress</h5>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar" style="width: 80%;" role="progressbar">
+                          <span class="sr-only">80% Complete</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="example-wrap">
+                    <div class="example">
+                      <h5>With Label</h5>
+                      <div class="progress progress-lg">
+                        <div class="progress-bar progress-bar-danger" style="width: 60%;" role="progressbar">60%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="example-wrap">
+                    <div class="example">
+                      <h5>Striped</h5>
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-info progress-bar-striped" aria-valuenow="80"
+                          aria-valuemin="0" aria-valuemax="100" style="width: 80%"
+                          role="progressbar">
+                          <span class="sr-only">80% Complete (success)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row row-lg">
+                <div class="col-md-4">
+                  <div class="example-wrap">
+                    <div class="example">
+                      <h5>Indicating</h5>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar progress-bar-warning progress-bar-indicating active" style="width: 80%;"
+                          role="progressbar">
+                          <span class="sr-only">80% Complete</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="example-wrap">
+                    <div class="example">
+                      <h5>Animated</h5>
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" aria-valuenow="90" aria-valuemin="0"
+                          aria-valuemax="100" style="width: 90%" role="progressbar">
+                          <span class="sr-only">90% Complete</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="example-wrap">
+                    <div class="example">
+                      <h5>Stacked</h5>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar progress-bar-success" style="width: 35%" role="progressbar">
+                          <span class="sr-only">35% Complete (success)</span>
+                        </div>
+                        <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 20%"
+                          role="progressbar">
+                          <span class="sr-only">20% Complete (warning)</span>
+                        </div>
+                        <div class="progress-bar progress-bar-danger" style="width: 10%" role="progressbar">
+                          <span class="sr-only">10% Complete (danger)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Example Style -->
+
+            <div class="row row-lg">
+              <div class="col-md-4">
+                <!-- Example Color -->
+                <div class="example-wrap">
+                  <h4 class="example-title">Color</h4>
+                  <p>You can also apply any colour suited according to the nature
+                    of the task.</p>
+                  <div class="example">
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-default" style="width: 15%;" role="progressbar">
+                        <span class="sr-only">15% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-success" style="width: 30%;" role="progressbar">
+                        <span class="sr-only">30% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-info" style="width: 45%;" role="progressbar">
+                        <span class="sr-only">45% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-warning" style="width: 60%;" role="progressbar">
+                        <span class="sr-only">60% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-danger" style="width: 75%;" role="progressbar">
+                        <span class="sr-only">75% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-dark" style="width: 90%;" role="progressbar">
+                        <span class="sr-only">90% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Example Color -->
+              </div>
+
+              <div class="col-md-4">
+                <!-- Example Size -->
+                <div class="example-wrap">
+                  <h4 class="example-title">Bar Size</h4>
+                  <p>You can also use a thinner version of the default progress by
+                    simple changing the classes.</p>
+                  <div class="example">
+                    <div class="progress progress-xs">
+                      <div class="progress-bar" style="width: 60%;" role="progressbar">
+                        <span class="sr-only">60% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-sm">
+                      <div class="progress-bar" style="width: 60%;" role="progressbar">
+                        <span class="sr-only">60% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" style="width: 60%;" role="progressbar">
+                        <span class="sr-only">60% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-lg">
+                      <div class="progress-bar" style="width: 60%;" role="progressbar">
+                        <span class="sr-only">60% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Example Size -->
+              </div>
+
+              <div class="col-md-4">
+                <!-- Example Radius -->
+                <div class="example-wrap">
+                  <h4 class="example-title">Radius</h4>
+                  <p>You can also use a radius style of the default progress by simple
+                    changing the classes.</p>
+                  <div class="example">
+                    <div class="progress progress-square">
+                      <div class="progress-bar progress-bar-primary" style="width: 50%;" role="progressbar">
+                        <span class="sr-only">50% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-primary" style="width: 50%;" role="progressbar">
+                        <span class="sr-only">50% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-circle">
+                      <div class="progress-bar progress-bar-primary" style="width: 50%;" role="progressbar">
+                        <span class="sr-only">50% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Example Radius -->
+              </div>
+            </div>
+
+            <div class="row row-lg">
+              <div class="col-md-4">
+                <!-- Example Vertical -->
+                <div class="example-wrap">
+                  <h4 class="example-title">Vertical Color</h4>
+                  <div class="example" style="max-height: 250px; overflow: hidden;">
+                    <div class="progress progress-xs progress-vertical">
+                      <div class="progress-bar progress-bar-default" style="height:15%;" role="progressbar">
+                        <span class="sr-only">15% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-xs progress-vertical">
+                      <div class="progress-bar progress-bar-success" style="height:30%;" role="progressbar">
+                        <span class="sr-only">30% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-xs progress-vertical">
+                      <div class="progress-bar progress-bar-info" style="height:45%;" role="progressbar">
+                        <span class="sr-only">45% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-xs progress-vertical">
+                      <div class="progress-bar progress-bar-warning" style="height:60%;" role="progressbar">
+                        <span class="sr-only">60% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-xs progress-vertical">
+                      <div class="progress-bar progress-bar-danger" style="height:75%;" role="progressbar">
+                        <span class="sr-only">75% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-xs progress-vertical mr-0">
+                      <div class="progress-bar progress-bar-dark" style="height:90%;" role="progressbar">
+                        <span class="sr-only">90% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Example Vertical Color -->
+              </div>
+
+              <div class="col-md-4">
+                <!-- Example Vertical Size -->
+                <div class="example-wrap">
+                  <h4 class="example-title">Vertical Bar Size</h4>
+                  <div class="example" style="max-height: 250px; overflow: hidden;">
+                    <div class="progress progress-xs progress-vertical">
+                      <div class="progress-bar" style="height:60%;" role="progressbar">
+                        <span class="sr-only">60% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-sm progress-vertical">
+                      <div class="progress-bar" style="height:60%;" role="progressbar">
+                        <span class="sr-only">60% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-vertical">
+                      <div class="progress-bar" style="height:60%;" role="progressbar">
+                        <span class="sr-only">60% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-lg progress-vertical mr-0">
+                      <div class="progress-bar" style="height:60%;" role="progressbar">
+                        <span class="sr-only">60% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Example Vertical Size -->
+              </div>
+
+              <div class="col-md-4">
+                <!-- Example Vertical Complex -->
+                <div class="example-wrap">
+                  <h4 class="example-title">Vertical Complex Usage</h4>
+                  <div class="example" style="max-height: 250px; overflow: hidden;">
+                    <div class="progress progress-xs progress-vertical">
+                      <div class="progress-bar progress-bar-success" style="height:25%;" role="progressbar">
+                        <span class="sr-only">35% Complete (success)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-warning progress-bar-striped" style="height:15%;"
+                        role="progressbar">
+                        <span class="sr-only">20% Complete (warning)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-danger" style="height:10%;" role="progressbar">
+                        <span class="sr-only">10% Complete (danger)</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-xs progress-vertical">
+                      <div class="progress-bar progress-bar-warning progress-bar-indicating active" style="height:70%;"
+                        role="progressbar">
+                        <span class="sr-only">70% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-lg progress-vertical">
+                      <div class="progress-bar progress-bar-danger" style="height:80%;" role="progressbar">80%</div>
+                    </div>
+                    <div class="progress progress-vertical">
+                      <div class="progress-bar progress-bar-striped active" aria-valuenow="90" aria-valuemin="0"
+                        aria-valuemax="100" style="height:90%;" role="progressbar">
+                        <span class="sr-only">90% Complete</span>
+                      </div>
+                    </div>
+                    <div class="progress progress-vertical mr-0">
+                      <div class="progress-bar progress-bar-info progress-bar-striped" aria-valuenow="80"
+                        aria-valuemin="0" aria-valuemax="100" style="height:95%;"
+                        role="progressbar">
+                        <span class="sr-only">95% Complete (success)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Example Vertical Complex -->
+              </div>
+            </div>
+
+            <div class="row row-lg">
+              <div class="col-md-12">
+                <!-- Example Bars -->
+                <div class="example-wrap">
+                  <h4 class="example-title">Skill Bars</h4>
+                  <div class="row row-lg">
+                    <div class="col-md-6">
+                      <div class="example-wrap">
+                        <p>A more recent development is the professional skill bars,
+                          which is used in your professional situations where the
+                          extent of the skill can not be determined in a way that
+                          could be expressed as a percentage.This bar uses motion
+                          and title text to show that progress is taking place.</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="example-wrap">
+                        <h5>Photoshop
+                          <span class="float-right">40%</span>
+                        </h5>
+                        <div class="progress progress-sm">
+                          <div class="progress-bar progress-bar-indicating active" style="width: 40%;" role="progressbar"></div>
+                        </div>
+                        <h5>Html
+                          <span class="float-right">80%</span>
+                        </h5>
+                        <div class="progress progress-sm">
+                          <div class="progress-bar progress-bar-indicating active" style="width: 80%;" role="progressbar"></div>
+                        </div>
+                        <h5>Javascript
+                          <span class="float-right">60%</span>
+                        </h5>
+                        <div class="progress progress-sm">
+                          <div class="progress-bar progress-bar-indicating active" style="width: 60%;" role="progressbar"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- End Example Bars -->
+              </div>
+            </div>
+            <div class="row row-lg">
+              <div class="col-md-12">
+                <!-- Example asProgress -->
+                <div class="example-wrap">
+                  <h4 class="example-title">asProgress
+                    <small><a class="example-plugin-link" href="https://github.com/amazingSurge/jquery-asProgress"
+                        target="_blank">official website</a></small>
+                  </h4>
+                  <p>Progress bar use a linear function, such that the advancement
+                    of a progress bar is directly proportional to the amount of
+                    work that has been completed. </p>
+                  <div class="row row-lg">
+                    <div class="col-md-6">
+                      <div class="example-wrap">
+                        <h6 class="font-size-16 mt-0">Numbers</h6>
+                        <div class="progress" data-goal="60" data-plugin="progress">
+                          <div class="progress-bar" aria-valuemin="15" aria-valuemax="115" aria-valuenow="25"
+                            role="progressbar">
+                            <span class="progress-label"></span>
+                          </div>
+                        </div>
+                        <h6 class="font-size-16">Percentage</h6>
+                        <div class="progress" data-labeltype="percentage" data-goal="-40" data-plugin="progress">
+                          <div class="progress-bar" aria-valuemin="-100" aria-valuemax="0" aria-valuenow="-80"
+                            role="progressbar">
+                            <span class="progress-label"></span>
+                          </div>
+                        </div>
+                        <h6 class="font-size-16">Steps</h6>
+                        <div class="progress" data-labeltype="steps" data-totalsteps="8" data-goal="80"
+                          data-plugin="progress">
+                          <div class="progress-bar" aria-valuemin="0" aria-valuemax="100" style="width: 50%"
+                            aria-valuenow="60" role="progressbar">
+                            <span class="progress-label"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="example-wrap">
+                        <div class="contextual-progress">
+                          <div class="clearfix">
+                            <div class="progress-title">Numbers</div>
+                            <div class="progress-label">25%</div>
+                          </div>
+                          <div class="progress" data-goal="60" data-plugin="progress">
+                            <div class="progress-bar" aria-valuemin="15" aria-valuemax="115" aria-valuenow="25"
+                              role="progressbar">
+                              <span class="progress-label"></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="contextual-progress">
+                          <div class="clearfix">
+                            <div class="progress-title">Percentage</div>
+                            <div class="progress-label">50%</div>
+                          </div>
+                          <div class="progress" data-labeltype="percentage" data-goal="-40" data-plugin="progress">
+                            <div class="progress-bar" aria-valuemin="-100" aria-valuemax="0" aria-valuenow="-80"
+                              role="progressbar">
+                              <span class="progress-label"></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="contextual-progress">
+                          <div class="clearfix">
+                            <div class="progress-title">Steps</div>
+                            <div class="progress-label">50%</div>
+                          </div>
+                          <div class="progress" data-labeltype="steps" data-totalsteps="8" data-goal="80"
+                            data-plugin="progress">
+                            <div class="progress-bar" aria-valuemin="0" aria-valuemax="100" style="width: 50%"
+                              aria-valuenow="60" role="progressbar">
+                              <span class="progress-label"></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="text-center example example-buttons">
+                    <button class="btn btn-outline btn-primary" id="exampleButtonStart" type="button">start</button>
+                    <button class="btn btn-outline btn-primary" id="exampleButtonStop" type="button">stop</button>
+                    <button class="btn btn-outline btn-primary" id="exampleButtonGoto" type="button">go to value 50</button>
+                    <button class="btn btn-outline btn-primary" id="exampleButtonGotoPercentage" type="button">go to 50%</button>
+                    <button class="btn btn-outline btn-primary" id="exampleButtonFinish" type="button">finish</button>
+                    <button class="btn btn-outline btn-primary" id="exampleButtonReset" type="button">reset</button>
+                    <button class="btn btn-outline btn-primary" id="exampleButtonRandom" type="button">random</button>
+                  </div>
+                </div>
+                <!-- End Example asProgress -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Panel -->
+      </div>
+    </div>
+    <!-- End Page -->
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="site-footer-legal">© 2020 Gleantap, Inc</div>
+      <div class="site-footer-right">
+      </div>
+    </footer>
+    <!-- Core  -->
+    <script src="../../assets/vendor/babel-external-helpers/babel-external-helpers.js"></script>
+    <script src="../../assets/vendor/jquery/jquery.js"></script>
+    <script src="../../assets/vendor/popper-js/umd/popper.min.js"></script>
+    <script src="../../assets/vendor/bootstrap/bootstrap.js"></script>
+    <script src="../../assets/vendor/animsition/animsition.js"></script>
+    <script src="../../assets/vendor/mousewheel/jquery.mousewheel.js"></script>
+    <script src="../../assets/vendor/asscrollbar/jquery-asScrollbar.js"></script>
+    <script src="../../assets/vendor/asscrollable/jquery-asScrollable.js"></script>
+    <script src="../../assets/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
+    
+    <!-- Plugins -->
+    <script src="../../assets/vendor/switchery/switchery.js"></script>
+    <script src="../../assets/vendor/intro-js/intro.js"></script>
+    <script src="../../assets/vendor/screenfull/screenfull.js"></script>
+    <script src="../../assets/vendor/slidepanel/jquery-slidePanel.js"></script>
+        <script src="../../assets/vendor/asprogress/jquery-asProgress.js"></script>
+    
+    <!-- Scripts -->
+    <script src="../../assets/js/Component.js"></script>
+    <script src="../../assets/js/Plugin.js"></script>
+    <script src="../../assets/js/Base.js"></script>
+    <script src="../../assets/js/Config.js"></script>
+    
+    <script src="../../assets/js/Section/Menubar.js"></script>
+    <script src="../../assets/js/Section/GridMenu.js"></script>
+    <script src="../../assets/js/Section/Sidebar.js"></script>
+    <script src="../../assets/js/Section/PageAside.js"></script>
+    <script src="../../assets/js/Plugin/menu.js"></script>
+    
+    <script src="../../assets/js/config/colors.js"></script>
+    <script src="../../assets/js/config/tour.js"></script>
+    <script>Config.set('assets', '../../assets');</script>
+    
+    <!-- Page -->
+    <script src="../../assets/js/Site.js"></script>
+    <script src="../../assets/js/Plugin/asscrollable.js"></script>
+    <script src="../../assets/js/Plugin/slidepanel.js"></script>
+    <script src="../../assets/js/Plugin/switchery.js"></script>
+        <script src="../../assets/js/Plugin/asprogress.js"></script>
+    
+        <script src="../../assets/examples/js/uikit/progress-bars.js"></script>
+     <!-- MODALS -->
+    <div class="modal modal-addcustomer" id="addCustomer" aria-labelledby="addCustomerLabel" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-simple">
+            <form class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h3 class="modal-title" id="addCustomerLabel">Add Customer</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="col-12 form-group">
+                        <div class="input-group">
+                            <input type="search" class="form-control form-control-lg" id="inputSearchable"
+                                placeholder="Search ...">
+                            <button type="submit" class="input-search-btn">
+                                <i class="icon wb-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-12 form-group">
+                        <button type="button" class="btn btn-primary btn-block btn-lg"> <i class="icon wb-file"></i> Add
+                            Users Through CSV</button>
+                    </div>
+                </div>
+    
+                <div class="modal-body h-300 " data-plugin="scrollable">
+                    <div class="w-p100" data-role="container">
+                      <div class="w-p100" data-role="content">
+                        <ul class="list-group list-group-dividered " >
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-online" href="#">
+                                        <img src="../../assets/examples/images/portraits/5.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Edward Fletcher</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-off" href="javascript:void(0)">
+                                        <img src="../../assets/examples/images/portraits/6.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Justin Martin</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-away" href="javascript:void(0)">
+                                        <img src="../../assets/examples/images/portraits/7.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Terrance Arnold</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" class="media">
+                                    <div class="avatar avatar-lg avatar-busy" href="#">
+                                        <img src="../../assets/examples/images/portraits/8.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Heather Harper</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-online" href="#">
+                                        <img src="../../assets/examples/images/portraits/5.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Edward Fletcher</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-off" href="javascript:void(0)">
+                                        <img src="../../assets/examples/images/portraits/6.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Justin Martin</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-away" href="javascript:void(0)">
+                                        <img src="../../assets/examples/images/portraits/7.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Terrance Arnold</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" class="media">
+                                    <div class="avatar avatar-lg avatar-busy" href="#">
+                                        <img src="../../assets/examples/images/portraits/8.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Heather Harper</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-online" href="#">
+                                        <img src="../../assets/examples/images/portraits/5.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Edward Fletcher</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-off" href="javascript:void(0)">
+                                        <img src="../../assets/examples/images/portraits/6.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Justin Martin</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="media" href="#">
+                                    <div class="avatar avatar-lg avatar-away" href="javascript:void(0)">
+                                        <img src="../../assets/examples/images/portraits/7.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Terrance Arnold</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" class="media">
+                                    <div class="avatar avatar-lg avatar-busy" href="#">
+                                        <img src="../../assets/examples/images/portraits/8.jpg" alt="">
+                                        <i></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="name my-auto" href="#">Heather Harper</h3> 
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+    
+                        </div>
+                    </div>
+                </div>
+    
+            </form>
+        </div>
+    </div>  </body>
+</html>

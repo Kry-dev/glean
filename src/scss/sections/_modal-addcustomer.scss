@@ -1,0 +1,31 @@
+.modal-addcustomer {
+  .media {
+    display: flex;
+    align-items: center;
+  }
+  .avatar {
+    margin-right: 20px;
+  }
+  .scrollable-bar {
+    right: 1rem;
+    .scrollable-bar-handle {
+      //   background: $primary !important;
+    }
+  }
+
+  .list-group-item {
+    padding: 0;
+    &:first-child {
+      border-top: 1px solid $border-color;
+    }
+    a {
+      padding: 1rem 1.25rem;
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        background: $gray-light;
+      }
+    }
+  }
+
+}
