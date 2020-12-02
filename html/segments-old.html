@@ -240,11 +240,7 @@
 <!-- Page -->
 <div class="page">
   <div class="page-header">
-   <div class="d-flex justify-content-between">
-    <h1 class="page-title">Segments </h1>
-    <a href="#" class="btn btn-lg btn-primary text-right my-3"><i class="icon wb-plus" aria-hidden="true"></i> Create New Segment</a>
-    
-   </div>
+    <h1 class="page-title">Segments</h1>
   </div>
   <div class="page-content container-fluid">
      <!-- Table Individual column searching -->
@@ -1286,7 +1282,54 @@
           });
           table.DataTable(options);
           $('div.dataTables_filter label,div.dataTables_filter input').addClass('w-p100');
+          $("div.create").html(`
           
+          <div class="col-xl-9 create-tags">
+           <div class="dropdown">
+             <button type="button" class="btn btn-lg btn-outline btn-primary dropdown-toggle p-10" id="exampleBadagesDropdown" data-toggle="dropdown" aria-expanded="false"><i class="icon wb-plus" aria-hidden="true"></i></button>
+             <div class="dropdown-menu w-400 py-10 px-20" aria-labelledby="exampleBadagesDropdown" role="menu">
+               <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked1"><label for="inputUnchecked1">test name</label></div>
+               <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked2"><label for="inputUnchecked2">test name</label></div>
+               <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked3"><label for="inputUnchecked3">test name</label></div>
+               <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked4"><label for="inputUnchecked4">test name</label></div>
+               <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked5"><label for="inputUnchecked5">test name</label></div>
+               <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked6"><label for="inputUnchecked6">test name</label></div>
+               <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked7"><label for="inputUnchecked7">test name</label></div>
+               <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked8"><label for="inputUnchecked8">test name</label></div>
+               <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked9"><label for="inputUnchecked9">test name</label></div>
+               <div class="py-10">
+                 <a class="dropdown-item btn btn-primary btn-lg text-center p-16" href="javascript:void(0)" role="menuitem">Create New</a>
+               </div>
+             </div>
+           </div>
+           <a class="btn btn-pure icon wb-chevron-left-mini" href="#" id="right-button" style="display: none;"></a>
+           <div class="create-tags-list">
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+             <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+           </div>
+           <a class="btn btn-pure icon wb-chevron-right-mini" href="#" id="left-button"></a>
+          </div>
+          <div class="col-xl-3 d-flex justify-content-xl-end">
+           <button type="button" class="btn btn-lg btn-primary my-3"><i class="icon wb-plus" aria-hidden="true"></i> Create New Segment</button>
+          </div>`
+          );
           
           // Create Box List horizontal scroll
           var setInvisible = function(elem) {

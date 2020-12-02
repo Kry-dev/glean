@@ -1,5 +1,5 @@
 ---
-title: Audience
+title: Segments
 body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
 ---
 
@@ -15,14 +15,13 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
 <link rel="stylesheet" href="{{assets}}/vendor/datatables.net-responsive-bs4/dataTables.responsive.bootstrap4.css">
 <link rel="stylesheet" href="{{assets}}/vendor/datatables.net-buttons-bs4/dataTables.buttons.bootstrap4.css">
 
-<link rel="stylesheet" href="{{assets}}/vendor/chartist/chartist.css">
+<!-- <link rel="stylesheet" href="{{assets}}/vendor/chartist/chartist.css"> -->
 <link rel="stylesheet" href="{{assets}}/vendor/asscrollable/asScrollable.css">
-
-<link rel="stylesheet" href="{{assets}}/examples/css/uikit/modals.css">
+<!-- <link rel="stylesheet" href="{{assets}}/examples/css/uikit/modals.css"> -->
 {{/content}}
 
 {{#content "css" mode="prepend"}}
-<link rel="stylesheet" href="{{assets}}/examples/css/charts/chartist.css">
+<!-- <link rel="stylesheet" href="{{assets}}/examples/css/charts/chartist.css"> -->
 <link rel="stylesheet" href="{{assets}}/examples/css/tables/datatable.css">
 <!-- <link rel="stylesheet" href="{{assets}}/examples/css/dashboard/v1.css"> -->
 {{/content}}
@@ -35,13 +34,13 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
 {{/content}}
 
 {{#content "js_vendor" mode="append"}}
-<script src="{{assets}}/vendor/skycons/skycons.js"></script>
-<script src="{{assets}}/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.js"></script>
-<script src="{{assets}}/vendor/chartist/chartist.js"></script>
-<script src="{{assets}}/vendor/aspieprogress/jquery-asPieProgress.min.js"></script>
-<script src="{{assets}}/vendor/jvectormap/jquery-jvectormap.min.js"></script>
-<script src="{{assets}}/vendor/jvectormap/maps/jquery-jvectormap-au-mill-en.js"></script>
-<script src="{{assets}}/vendor/matchheight/jquery.matchHeight-min.js"></script>
+<!-- <script src="{{assets}}/vendor/skycons/skycons.js"></script> -->
+<!-- <script src="{{assets}}/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.js"></script> -->
+<!-- <script src="{{assets}}/vendor/chartist/chartist.js"></script> -->
+<!-- <script src="{{assets}}/vendor/aspieprogress/jquery-asPieProgress.min.js"></script> -->
+<!-- <script src="{{assets}}/vendor/jvectormap/jquery-jvectormap.min.js"></script> -->
+<!-- <script src="{{assets}}/vendor/jvectormap/maps/jquery-jvectormap-au-mill-en.js"></script> -->
+<!-- <script src="{{assets}}/vendor/matchheight/jquery.matchHeight-min.js"></script> -->
 <script src="{{assets}}/vendor/datatables.net/jquery.dataTables.js"></script>
 
 <script src="{{assets}}/vendor/datatables.net-bs4/dataTables.bootstrap4.js"></script>
@@ -57,29 +56,22 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
 <script src="{{assets}}/vendor/datatables.net-buttons/buttons.print.js"></script>
 <script src="{{assets}}/vendor/datatables.net-buttons/buttons.colVis.js"></script>
 <script src="{{assets}}/vendor/datatables.net-buttons-bs4/buttons.bootstrap4.js"></script>
-<script src="{{assets}}/vendor/asrange/jquery-asRange.min.js"></script>
+<!-- <script src="{{assets}}/vendor/asrange/jquery-asRange.min.js"></script> -->
 <script src="{{assets}}/vendor/bootbox/bootbox.js"></script>
-<script src="{{assets}}/vendor/chartist/chartist.js"></script>
-<script src="{{assets}}/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.js"></script>
+<!-- <script src="{{assets}}/vendor/chartist/chartist.js"></script> -->
+<!-- <script src="{{assets}}/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.js"></script> -->
 
 <script>
   (function() {
     $(document).ready(function() {
-      // Solving the issue of displaying charts when switching page tabs
-      $('#page-tabs a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-        $(e.currentTarget.hash).find('.ct-chart').each(function(el, tab) {
-          tab.__chartist__.update();
-        });
-      });
-      // end of Solving the issue of displaying charts when switching page tabs
       // datatable js
       var defaults = Plugin.getDefaults("dataTable");
-      let table = $('#customerListTable');
+      let table = $('#segmentsListTable');
       var options = $.extend(true, {}, defaults, {
         "searching": true,
         "ordering": true,
         "aoColumnDefs": [
-          { 'bSortable': false, 'aTargets': [ 5 ] } // hide sort arrows for last column
+          { 'bSortable': false, 'aTargets': [ 4 ] } // hide sort arrows for last column
         ],
         "paging": true,
         "autoWidth": true,
@@ -89,48 +81,149 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
           [5, 10, 25, -1],
           [5, 10, 25, "All"]
         ],
-        "dom": "<'row custom-table-toolbar'<'col-sm-12 col-xl-4'f><'col-sm-12 col-xl-8'B>>" +
-  "<'row'<'col-sm-12'tr>>" +
-  "<'row custom-table-footer'<'col-sm-12 col-xl-4'li><'col-sm-12 col-xl-8'p>>",
+        //Position from top to bottom! Custom Toolbar -> table -> Custom Table Footer
+        "dom": "'<'row custom-table-toolbar'<'col-md-12 col-xl-6 col-lg-6'f><'col-md-12 col-xl-6 col-lg-6'B>>" +
+          "<'row create'>" +
+          "<'row'<'col-sm-12'tr>>" +
+          "<'row custom-table-footer'<'col-sm-12 col-xl-4'li><'col-sm-12 col-xl-8'p>>",
         "columnDefs": [{
           "className": "dt-right",
           "targets": [0] // First column
         }],
+        
+        //Buttons in toolbar
         "buttons": [
           {
-            "extend": 'csv',
-            "className": 'btn btn-squared btn-primary btn-lg',
-            text: '<i class="icon wb-file"></i> Export CSV',
-          },
-          {
-            // "extend": "create",
-            "className": 'btn btn-squared btn-success btn-lg',
-            "editor": "editor",
-            "text": "Add Customer",
-            action: function (e, node, config){
-              $('#addCustomer').modal('show')
-            }
-          },
-          {
-            "className": 'btn btn-squared btn-outline btn-default btn-lg',
+            "className": 'btn btn-squared btn-outline btn-default',
             "extend": 'colvis',
-            "text": 'Filters'
+            "text": 'Date'
           },
           {
-            "className": 'btn btn-squared btn-outline btn-default btn-lg',
+            "className": 'btn btn-squared btn-outline btn-default',
             "extend": 'colvis',
-            "text": 'Sort'
+            "text": 'Members'
           },
           {
-            "className": 'btn btn-squared btn-outline btn-default btn-lg',
+            "className": 'btn btn-squared btn-outline btn-default',
             "extend": 'colvis',
-            "text": 'Columns'
+            "text": 'Sms opt-ins'
           },
-
-          ]
+        
+        ]
       });
-
       table.DataTable(options);
+      $('div.dataTables_filter label,div.dataTables_filter input').addClass('w-p100');
+      $("div.create").html(`
+      
+      <div class="col-xl-9 create-tags">
+       <div class="dropdown">
+         <button type="button" class="btn btn-lg btn-outline btn-primary dropdown-toggle p-10" id="exampleBadagesDropdown" data-toggle="dropdown" aria-expanded="false"><i class="icon wb-plus" aria-hidden="true"></i></button>
+         <div class="dropdown-menu w-400 py-10 px-20" aria-labelledby="exampleBadagesDropdown" role="menu">
+           <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked1"><label for="inputUnchecked1">test name</label></div>
+           <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked2"><label for="inputUnchecked2">test name</label></div>
+           <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked3"><label for="inputUnchecked3">test name</label></div>
+           <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked4"><label for="inputUnchecked4">test name</label></div>
+           <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked5"><label for="inputUnchecked5">test name</label></div>
+           <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked6"><label for="inputUnchecked6">test name</label></div>
+           <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked7"><label for="inputUnchecked7">test name</label></div>
+           <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked8"><label for="inputUnchecked8">test name</label></div>
+           <div class="dropdown-item checkbox-custom checkbox-primary"><input type="checkbox" id="inputUnchecked9"><label for="inputUnchecked9">test name</label></div>
+           <div class="py-10">
+             <a class="dropdown-item btn btn-primary btn-lg text-center p-16" href="javascript:void(0)" role="menuitem">Create New</a>
+           </div>
+         </div>
+       </div>
+       <a class="btn btn-pure icon wb-chevron-left-mini" href="#" id="right-button" style="display: none;"></a>
+       <div class="create-tags-list">
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+         <label class="btn btn-outline btn-primary"><input name="test-name" type="radio">test name</label>
+       </div>
+       <a class="btn btn-pure icon wb-chevron-right-mini" href="#" id="left-button"></a>
+      </div>
+      <div class="col-xl-3 d-flex justify-content-xl-end">
+       <button type="button" class="btn btn-lg btn-primary my-3"><i class="icon wb-plus" aria-hidden="true"></i> Create New Segment</button>
+      </div>`
+      );
+      
+      // Create Box List horizontal scroll
+      var setInvisible = function(elem) {
+        elem.css('display', 'none');
+      };
+      var setVisible = function(elem) {
+        elem.css('display', 'block');
+      };
+      
+      var elem = $(".create-tags-list");
+      var items = elem.children();
+      
+      // Inserting Buttons
+      // elem.prepend('<a class="btn btn-pure icon wb-chevron-left-mini" href="#" id="right-button" style="display: none;"></a>');
+      // elem.append('  <a class="btn btn-pure icon wb-chevron-right-mini" href="#" id="left-button"></a>');
+      
+      // Inserting Inner
+      // items.wrapAll('<div class="create-wrap-inner" />');
+      
+      // Inserting Outer
+      // debugger;
+      // elem.find('.create-wrap-inner').wrap('<div class="create-wrap"/>');
+      
+      var outer = $('.create-tags-list');
+      
+      var updateUI = function() {
+        var maxWidth = outer.outerWidth(true);
+        var actualWidth = 0;
+        $.each($('.create-tags-list >'), function(i, item) {
+          actualWidth += $(item).outerWidth(true);
+        });
+        
+        if (actualWidth <= maxWidth) {
+          setVisible($('#left-button'));
+        }
+      };
+      updateUI();
+      
+      
+      
+      $('#right-button').click(function() {
+        var leftPos = outer.scrollLeft();
+        outer.animate({
+          scrollLeft: leftPos - 200
+        }, 800, function() {
+          // debugger;
+          if ($('.create-wrap').scrollLeft() <= 0) {
+            setInvisible($('#right-button'));
+          }
+        });
+      });
+      
+      $('#left-button').click(function() {
+        setVisible($('#right-button'));
+        var leftPos = outer.scrollLeft();
+        outer.animate({
+          scrollLeft: leftPos + 200
+        }, 800);
+      });
+      
+      $(window).resize(function() {
+        updateUI();
+      });
     });
   })();
 </script>
@@ -156,13 +249,13 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
 <!-- Page -->
 <div class="page">
   <div class="page-header">
-    <h1 class="page-title">Audience</h1>
+    <h1 class="page-title">Segments</h1>
   </div>
   <div class="page-content container-fluid">
      <!-- Table Individual column searching -->
      <div class="custom-table">
       <div class="custom-table-body">
-        <table class="table table-hover dataTable w-full" id="customerListTable">
+        <table class="table table-hover dataTable w-full" id="segmentsListTable">
           <!-- <tfoot>
             <tr>
               <th>User Name</th>
@@ -179,7 +272,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
               <th>Email status</th>
               <th>Phone</th>
               <th>Facebook ID</th>
-              <th>Add</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -188,11 +280,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/2.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Ada Hoppe</h4></a>
                     <div class="mt-5">
@@ -208,22 +295,24 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-danger badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
                     <i class="icon wb-eye" aria-hidden="true"></i>
                   </button>
                   <div class="btn-group dropleft" role="group">
-                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop2" data-toggle="dropdown" aria-expanded="false">
+                    <button type="button" class="btn btn-outline btn-default dropdown-toggle" id="exampleGroupDrop3" data-toggle="dropdown" aria-expanded="false">
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                    <div class="dropdown-menu" aria-labelledby="exampleGroupDrop3" role="menu" >
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -232,11 +321,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/2.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Ada Hoppe</h4></a>
                     <div class="mt-5">
@@ -251,10 +335,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-success badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -265,8 +349,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -275,11 +361,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/1.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Herman Beck</h4></a>
                     <div class="mt-5">
@@ -295,10 +376,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-warning badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -309,8 +390,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -319,11 +402,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/3.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Mary Adams</h4></a>
                     <div class="mt-5">
@@ -339,10 +417,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-dark badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -353,8 +431,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -363,11 +443,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/4.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Caleb Richards</h4></a>
                     <div class="mt-5">
@@ -383,10 +458,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-primary badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -397,8 +472,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -407,11 +484,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/5.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">June Lane</h4></a>
                     <div class="mt-5">
@@ -427,10 +499,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-success badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -441,8 +513,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -451,11 +525,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/6.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Edward Fletcher</h4></a>
                     <div class="mt-5">
@@ -471,10 +540,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-info badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -485,8 +554,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -495,11 +566,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/7.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Crystal Bates</h4></a>
                     <div class="mt-5">
@@ -515,10 +581,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-dark badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -529,8 +595,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -539,11 +607,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/8.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Nathan Watts</h4></a>
                     <div class="mt-5">
@@ -559,10 +622,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-default   badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -573,8 +636,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -583,11 +648,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/2.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Heather Harper</h4></a>
                     <div class="mt-5">
@@ -603,10 +663,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-danger badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -617,8 +677,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -627,11 +689,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/2.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Edward Fletcher</h4></a>
                     <div class="mt-5">
@@ -647,10 +704,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-default badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -661,8 +718,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -671,11 +730,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/10.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Nick Hoppe</h4></a>
                     <div class="mt-5">
@@ -691,10 +745,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-danger badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -705,8 +759,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -715,11 +771,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/2.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Ada Hoppe</h4></a>
                     <div class="mt-5">
@@ -734,10 +785,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-success badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -748,8 +799,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -758,11 +811,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/1.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Herman Beck</h4></a>
                     <div class="mt-5">
@@ -778,10 +826,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-warning badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -792,8 +840,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -802,11 +852,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/3.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Mary Adams</h4></a>
                     <div class="mt-5">
@@ -822,10 +867,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-dark badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -836,8 +881,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -846,11 +893,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/4.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Caleb Richards</h4></a>
                     <div class="mt-5">
@@ -866,10 +908,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-primary badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -880,8 +922,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -890,11 +934,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/5.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">June Lane</h4></a>
                     <div class="mt-5">
@@ -910,10 +949,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-success badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -924,8 +963,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -934,11 +975,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/6.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Edward Fletcher</h4></a>
                     <div class="mt-5">
@@ -954,10 +990,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-info badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -968,8 +1004,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -978,11 +1016,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/7.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Crystal Bates</h4></a>
                     <div class="mt-5">
@@ -998,10 +1031,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-dark badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -1012,8 +1045,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -1022,11 +1057,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/8.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Nathan Watts</h4></a>
                     <div class="mt-5">
@@ -1042,10 +1072,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-default   badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -1056,8 +1086,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -1066,11 +1098,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/2.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Heather Harper</h4></a>
                     <div class="mt-5">
@@ -1086,10 +1113,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-danger badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -1100,8 +1127,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>
@@ -1110,11 +1139,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             <tr>
               <td>
                 <div class="media">
-                  <div class="pr-20">
-                    <a class="avatar avatar-sm" href="javascript:void(0)">
-                      <img src="{{assets}}/portraits/2.jpg" alt="...">
-                    </a>
-                  </div>
                   <div class="media-body">
                     <a href="javascript:void(0)"><h4 class="my-0">Edward Fletcher</h4></a>
                     <div class="mt-5">
@@ -1130,10 +1154,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                   </div>
                 </div>
               </td>
-              <td><span class="badge badge-default badge-lg">active</span></td>
+              <td>yevhen.ledo@mail.com</td>
               <td>+5129055336</td>
               <td><a href="#">ID=100013137888840</a></td>
-              <td>2013/05/13</td>
+
               <td class="actions">
                 <div class="btn-group" aria-label="Button group with nested dropdown" role="group">
                   <button type="button" class="btn btn-outline btn-default">
@@ -1144,8 +1168,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
                       <i class="icon wb-more-vertical" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="exampleGroupDrop2" role="menu" >
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-pencil"></i> Edit</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-trash"></i> Remove from segment</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Duplicate</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Move to Folder</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Switch to Dynamic/Static</a>
+                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem"> Add to Fb custom audience</a>
                     </div>
                   </div>
                 </div>

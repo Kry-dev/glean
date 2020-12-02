@@ -544,7 +544,7 @@ body.site-gridmenu-active {
       text-transform: uppercase; }
 
 .page-nav-tabs {
-  padding: 0 30px; }
+  padding: 0; }
 
 .page-content {
   padding: 30px 30px; }
@@ -637,7 +637,11 @@ body.site-gridmenu-active {
 .page-title {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 26px; }
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  color: #000; }
   .page-title > .icon {
     margin-right: .3em; }
 
@@ -8506,44 +8510,44 @@ h3.example-title {
       content: "\f131"; }
   .custom-table div.dataTables_wrapper div.dataTables_filter input {
     position: relative;
-    min-width: 320px;
+    width: 100%;
+    min-width: 220px;
     height: 48px;
     padding-left: 50px;
     margin-left: 0;
     font-size: 16px; }
-  .custom-table div.dataTables_wrapper div.dataTables_filter .dt-buttons.btn-group {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
-    width: 100%; }
+
+.custom-table .btn {
+  border-radius: 6px !important; }
 
 .custom-table-toolbar {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
       flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
   -ms-flex-pack: justify;
       justify-content: space-between; }
   .custom-table-toolbar .btn {
     position: relative;
-    min-width: 165px;
+    display: inline-block;
+    width: 165px;
     height: 48px;
     padding: 10px 20px;
+    margin: 0 10px;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 48px;
-    line-height: 150%;
-    border-radius: 6px !important; }
+    line-height: 150%; }
     .custom-table-toolbar .btn.dropdown-toggle {
       position: relative;
+      display: inline-block;
+      width: 165px;
       color: #12263f;
       text-align-last: left;
       background: #fff; }
-  .custom-table-toolbar .btn-group .btn ~ .dropdown-toggle::after {
+  .custom-table-toolbar .btn-group .btn ~ .dropdown-toggle::after,
+  .custom-table-toolbar .dropdown-toggle::after {
     position: absolute;
     top: 50%;
     right: 20px;
@@ -8551,14 +8555,16 @@ h3.example-title {
     font-family: "Web Icons";
     content: "\f183";
     border: 0; }
-  .custom-table-toolbar .dt-buttons.btn-group {
+  .custom-table-toolbar .btn-group {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: row;
         flex-direction: row;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
     width: 100%; }
+    .custom-table-toolbar .btn-group .btn {
+      margin: 0 10px; }
 
 .custom-table table {
   border-spacing: 0 1em;
@@ -8645,46 +8651,30 @@ h3.example-title {
   border-radius: 6px; }
 
 .custom-table .create {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
   padding: 1rem; }
-  .custom-table .create .scrollable-container {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-        align-items: center;
-    -ms-flex-pack: justify;
-        justify-content: space-between; }
-  .custom-table .create .scrollable-content {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-        align-items: center;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
-    height: 70px; }
+  .custom-table .create .dropdown-toggle::after {
+    display: none; }
 
-.custom-table .create-box {
+.custom-table .create-tags {
+  position: relative;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: start;
-      justify-content: flex-start;
-  width: 70%; }
-  .custom-table .create-box .dropdown {
-    margin-right: 1rem; }
-  .custom-table .create-box .dropdown-toggle::after {
-    display: none; }
-  .custom-table .create-box .btn + .btn {
-    margin-left: 1rem; }
-  .custom-table .create-box-list {
+  padding: 0 0 0 5rem; }
+  .custom-table .create-tags .dropdown {
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .custom-table .create-tags .btn.icon {
+    position: absolute;
+    top: 1rem;
+    z-index: 2;
+    padding: 5px; }
+    .custom-table .create-tags .btn.icon.wb-chevron-left-mini {
+      left: 3.5rem; }
+    .custom-table .create-tags .btn.icon.wb-chevron-right-mini {
+      right: -1rem; }
+  .custom-table .create-tags-list {
+    position: relative;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: row;
@@ -8693,15 +8683,46 @@ h3.example-title {
         flex-wrap: nowrap;
     -ms-flex-align: center;
         align-items: center;
-    overflow: hidden;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap; }
-    .custom-table .create-box-list .btn {
-      background-color: rgba(62, 142, 247, 0.1);
-      border-color: transparent; }
-      .custom-table .create-box-list .btn:hover, .custom-table .create-box-list .btn:focus {
-        color: #12263f; }
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+    overflow: hidden; }
+  .custom-table .create-tags label {
+    margin: 0 5px; }
+    .custom-table .create-tags label input {
+      width: 0;
+      opacity: 0; }
+  .custom-table .create-tags .hide {
+    display: none; }
+
+.custom-table .create-box {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+  .custom-table .create-box .dropdown {
+    margin-right: 1rem; }
+  .custom-table .create-box .dropdown-toggle::after {
+    display: none; }
+  .custom-table .create-box .btn + .btn {
+    margin-left: 1rem; }
+
+.custom-table table.dataTable thead .sorting::before,
+.custom-table table.dataTable thead .sorting_asc::before,
+.custom-table table.dataTable thead .sorting_desc::before,
+.custom-table table.dataTable thead .sorting_asc_disabled::before,
+.custom-table table.dataTable thead .sorting_desc_disabled::before {
+  content: "\f182"; }
+
+.custom-table table.dataTable thead .sorting::after,
+.custom-table table.dataTable thead .sorting_asc::after,
+.custom-table table.dataTable thead .sorting_desc::after,
+.custom-table table.dataTable thead .sorting_asc_disabled::after,
+.custom-table table.dataTable thead .sorting_desc_disabled::after {
+  content: "\f183"; }
 
 .modal-addcustomer .media {
   display: -ms-flexbox;

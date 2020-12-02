@@ -5,7 +5,11 @@
 .page-title {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 26px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  color: $black;
 
   > .icon {
     margin-right: .3em;

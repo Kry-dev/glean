@@ -1314,6 +1314,9 @@
           var options = $.extend(true, {}, defaults, {
             "searching": true,
             "ordering": true,
+            "aoColumnDefs": [
+              { 'bSortable': false, 'aTargets': [ 5 ] } // hide sort arrows for last column
+            ],
             "paging": true,
             "autoWidth": true,
             "fixedHeader": false,

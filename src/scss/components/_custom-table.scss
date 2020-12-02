@@ -1,14 +1,16 @@
 //variables
 $button-height: 48px;
 $black-text-color: #12263f;
+$btn-width: 165px;
 // custom table
 .custom-table {
-
   div.dataTables_wrapper div.dataTables_filter {
     position: relative;
     text-align: left;
+
     label {
       position: relative;
+
       &::before {
         position: absolute;
         top: 7px;
@@ -21,45 +23,53 @@ $black-text-color: #12263f;
         content: "\f131";
       }
     }
+
     input {
       position: relative;
-      min-width: 320px;
+      width: 100%;
+      min-width: 220px;
       height: $button-height;
       padding-left: 50px;
       margin-left: 0;
       font-size: 16px;
-
-    }
-    .dt-buttons.btn-group {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
     }
   }
+
+  .btn {
+    border-radius: 6px !important;
+  }
+
   &-toolbar {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    //flex-wrap: nowrap;
     justify-content: space-between;
+
     .btn {
       position: relative;
-      min-width: 165px;
+      display: inline-block;
+      width: $btn-width;
       height: $button-height;
       padding: 10px 20px;
+      margin: 0 10px;
       font-size: 16px;
       font-style: normal;
       font-weight: 400;
       line-height: $button-height;
       line-height: 150%;
-      border-radius: 6px !important;
+
       &.dropdown-toggle {
         position: relative;
+        display: inline-block;
+        width: $btn-width;
         color: $black-text-color;
         text-align-last: left;
         background: $white;
       }
     }
-    .btn-group .btn ~ .dropdown-toggle::after {
+
+    .btn-group .btn ~ .dropdown-toggle::after,
+    .dropdown-toggle::after {
       position: absolute;
       top: 50%;
       right: 20px;
@@ -68,21 +78,27 @@ $black-text-color: #12263f;
       content: "\f183";
       border: 0;
     }
-    .dt-buttons.btn-group {
+
+    .btn-group {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: flex-end;
       width: 100%;
+
+      .btn {
+        margin: 0 10px;
+      }
     }
   }
+
   table {
     border-spacing: 0 1em;
     border-collapse: separate;
+
     th,
     td {
       padding: 18px 18px 18px 24px;
       border: 0;
-
     }
   }
 
@@ -106,12 +122,15 @@ $black-text-color: #12263f;
     color: $black-text-color;
     vertical-align: middle;
     background-color: $white;
+
     span {
       display: block;
       width: 100%;
+
       &.light {
         color: #a5b1c3;
       }
+
       &.badge {
         display: inline-block;
         width: inherit;
@@ -124,24 +143,31 @@ $black-text-color: #12263f;
     border-bottom: 20px solid transparent;
     border-radius: 3px;
   }
+
   .actions {
     width: 140px;
+
     .btn-group {
       float: right;
+
       .btn {
         border: 0;
       }
     }
+
     .dropdown-menu {
       background: #345178;
     }
+
     .dropdown-toggle::before,
     .dropdown-toggle::after {
       display: none;
     }
+
     .dropdown-item {
       color: $white;
       text-decoration: none;
+
       &:hover,
       &:focus {
         color: #345178;
@@ -151,16 +177,19 @@ $black-text-color: #12263f;
 
   .media {
     align-items: center;
+
     &-body {
       a {
         text-decoration: none;
       }
     }
+
     .btn-group {
       .badge {
         margin-right: .5rem;
       }
     }
+
     .btn-icon.btn-sm {
       width: 16px;
       padding: 4px;
@@ -170,16 +199,14 @@ $black-text-color: #12263f;
   }
 
   .pagination {
-    .page-item {
-      &.active {
-        .page-link {
-          color: $white;
-        }
+    .page-item.active {
+      .page-link {
+        color: $white;
       }
-      &.disabled {
-        a {
-          color: #76838f;
-        }
+    }
+    .page-item.disabled {
+      a {
+        color: #76838f;
       }
     }
     .page-link {
@@ -193,55 +220,87 @@ $black-text-color: #12263f;
 
   //Create box in Segments table
   .create {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 1rem;
-    .scrollable-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .scrollable-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 70px;
-    }
-  }
-  .create-box {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    width: 70%;
-    .dropdown {
-      margin-right: 1rem;
-    }
     .dropdown-toggle::after {
       display: none;
     }
-    .btn + .btn {
-      margin-left: 1rem;
+  }
+  .create-tags {
+    position: relative;
+    display: flex;
+    padding: 0 0 0 5rem;
+    .dropdown {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .btn.icon {
+      position: absolute;
+      top: 1rem;
+      z-index: 2;
+      padding: 5px;
+      &.wb-chevron-left-mini {
+        left: 3.5rem;
+      }
+      &.wb-chevron-right-mini {
+        right: -1rem;
+      }
     }
     &-list {
+      position: relative;
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
       align-items: center;
+      justify-content: flex-start;
       overflow: hidden;
-      overflow-x: scroll;
-      overflow-y: hidden;
-      white-space: nowrap;
-      .btn {
-        background-color: rgba($primary, .1);
-        border-color: transparent;
-        &:hover,
-        &:focus {
-          color: $black-text-color;
-        }
+    }
+    label {
+      margin: 0 5px;
+      input {
+        width: 0;
+        opacity: 0;
       }
     }
+    .hide {
+      display: none;
+    }
+  }
+
+  .create-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .dropdown {
+      margin-right: 1rem;
+    }
+
+    .dropdown-toggle::after {
+      display: none;
+    }
+
+    .btn + .btn {
+      margin-left: 1rem;
+    }
+  }
+
+
+  table.dataTable thead .sorting::before,
+  table.dataTable thead .sorting_asc::before,
+  table.dataTable thead .sorting_desc::before,
+  table.dataTable thead .sorting_asc_disabled::before,
+  table.dataTable thead .sorting_desc_disabled::before {
+    content: "\f182";
+  }
+
+  table.dataTable thead .sorting::after,
+  table.dataTable thead .sorting_asc::after,
+  table.dataTable thead .sorting_desc::after,
+  table.dataTable thead .sorting_asc_disabled::after,
+  table.dataTable thead .sorting_desc_disabled::after {
+    content: "\f183";
   }
 }
 
