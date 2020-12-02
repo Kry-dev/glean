@@ -627,6 +627,9 @@ body.site-gridmenu-active {
       .page-copyright-inverse .social .icon:hover, .page-copyright-inverse .social .icon:active {
         color: rgba(255, 255, 255, 0.8); }
 
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  right: 2rem; }
+
 @media (max-width: 991.98px) {
   .page {
     min-height: calc(100% - 66px); } }

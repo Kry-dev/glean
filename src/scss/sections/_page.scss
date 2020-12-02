@@ -177,10 +177,9 @@
   }
 }
 
-// add style
-// body.layout-full {
-//   padding-top: 0;
-// }
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  right: 2rem;
+}
 @include media-breakpoint-down(md) {
   .page {
     min-height: calc(100% - #{$site-footer-xs-height});
