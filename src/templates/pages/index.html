@@ -161,10 +161,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
   <div class="page-content container-fluid">
     <div id="page-tabs" class="nav-tabs-horizontal page-nav-tabs" data-plugin="tabs">
       <ul class="nav nav-tabs nav-tabs-line" role="tablist">
-        <li class="nav-item" role="presentation"><a class="nav-link " data-toggle="tab" href="#segmentReport"
-            aria-controls="segmentReport" role="tab" aria-selected="false">Segment Report</a></li>
-        <li class="nav-item" role="presentation"><a class="nav-link active show" data-toggle="tab" href="#customerList"
-            aria-controls="customerList" role="tab" aria-selected="true">Customer list</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link active show" data-toggle="tab" href="#segmentReport"
+            aria-controls="segmentReport" role="tab" aria-selected="true">Segment Report</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link " data-toggle="tab" href="#customerList"
+            aria-controls="customerList" role="tab" aria-selected="false">Customer list</a></li>
         <li class="nav-item" role="presentation"><a class="nav-link" data-toggle="tab" href="#segmentInsights"
             aria-controls="segmentInsights" role="tab" aria-selected="false">Segment Insights</a></li>
         <li class="dropdown nav-item" role="presentation" style="display: none;">
@@ -180,7 +180,40 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
         </li>
       </ul>
       <div class="tab-content pt-20">
-        <div class="tab-pane " id="segmentReport" role="tabpanel">
+        <div class="tab-pane active show" id="segmentReport" role="tabpanel">
+         <div class="row row-lg">
+          <div class="panel-group panel-group-continuous col-md-12" id="accordionHome" aria-multiselectable="true" role="tablist">
+            <div class="panel panel-accordion">
+              <div class="panel-heading" id="accordionHomeOne" role="tab">
+                <a class="panel-title collapsed" data-parent="#accordionHome" data-toggle="collapse" href="#exampleCollapseContinuousOne" aria-controls="exampleCollapseContinuousOne" aria-expanded="false">
+                 <h4>Criteria</h4>
+               </a>
+              </div>
+              <div class="panel-collapse collapse" id="exampleCollapseContinuousOne" aria-labelledby="accordionHomeOne" role="tabpanel">
+                <div class="panel-body">
+                  <table class="table table-simple w-full">
+                   <tbody>
+                     <tr role="row">
+                       <td>Purchase</td>
+                       <td>Over</td>
+                       <td>21 days</td>
+                       <td>is Equal to</td>
+                       <td>20</td>
+                     </tr>
+                     <tr role="row">
+                       <td>Purchase</td>
+                       <td>Over</td>
+                       <td>21 days</td>
+                       <td>is Equal to</td>
+                       <td>20</td>
+                     </tr>
+                   </tbody>
+                 </table>
+                </div>
+              </div>
+            </div>
+          </div>
+         </div>
           <div class="row row-lg">
             <div class="col-xl-4 col-lg-6">
               <!-- Example Simple Line Chart -->
@@ -416,7 +449,7 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
           </div>
 
         </div>
-        <div class="tab-pane active show" id="customerList" role="tabpanel">
+        <div class="tab-pane " id="customerList" role="tabpanel">
           <!-- Table Individual column searching -->
           <div class="custom-table">
             <div class="custom-table-body">

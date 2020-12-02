@@ -134,6 +134,7 @@ $btn-width: 165px;
       &.badge {
         display: inline-block;
         width: inherit;
+        font-weight: 400;
       }
     }
   }
@@ -304,6 +305,24 @@ $btn-width: 165px;
   }
 }
 
+
+.table-simple {
+  tr:first-child {
+    td {
+      border-top: 0;
+    }
+  }
+  td {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  //font-family: "Roboto";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: #828282;
+}
 // Responsive
 // ========================================================================
 

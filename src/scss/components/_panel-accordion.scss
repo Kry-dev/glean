@@ -1,0 +1,29 @@
+.panel-accordion {
+  .panel-title {
+    padding-right: 5rem;
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
+    &::before {
+      right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+      color: $primary;
+      content: "\f183";
+      border: 2px solid $primary;
+      border-radius: 50%;
+      opacity: 1;
+    }
+    &[aria-expanded="true"]::before {
+      opacity: .8;
+    }
+    &::after {
+      display: none;
+    }
+  }
+}

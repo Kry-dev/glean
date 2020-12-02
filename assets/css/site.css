@@ -8603,7 +8603,8 @@ h3.example-title {
       color: #a5b1c3; }
     .custom-table tbody td span.badge {
       display: inline-block;
-      width: inherit; }
+      width: inherit;
+      font-weight: 400; }
 
 .custom-table tbody tr {
   margin: 10px 0;
@@ -8726,6 +8727,43 @@ h3.example-title {
 .custom-table table.dataTable thead .sorting_asc_disabled::after,
 .custom-table table.dataTable thead .sorting_desc_disabled::after {
   content: "\f183"; }
+
+.table-simple {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: #828282; }
+  .table-simple tr:first-child td {
+    border-top: 0; }
+  .table-simple td {
+    padding-right: 0;
+    padding-left: 0; }
+
+.panel-accordion .panel-title {
+  padding-right: 5rem; }
+  .panel-accordion .panel-title:hover, .panel-accordion .panel-title:focus {
+    cursor: pointer; }
+  .panel-accordion .panel-title::before {
+    right: 20px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    color: #3e8ef7;
+    content: "\f183";
+    border: 2px solid #3e8ef7;
+    border-radius: 50%;
+    opacity: 1; }
+  .panel-accordion .panel-title[aria-expanded="true"]::before {
+    opacity: .8; }
+  .panel-accordion .panel-title::after {
+    display: none; }
 
 .modal-addcustomer .media {
   display: -ms-flexbox;
