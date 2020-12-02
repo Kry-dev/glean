@@ -2320,7 +2320,7 @@ fieldset[disabled]
   .form-material .floating-label {
     position: absolute;
     left: 0;
-    font-size: 1rem;
+    font-size: 1.143rem;
     color: #9e9e9e;
     pointer-events: none;
     transition: .3s ease all; }
@@ -2331,14 +2331,14 @@ fieldset[disabled]
   .form-material [class*="col-"] > .floating-label {
     left: 1.0715rem; }
   .form-material .form-control ~ .floating-label {
-    top: 0.57142857rem;
-    font-size: 1rem; }
+    top: 0.6531428555rem;
+    font-size: 1.143rem; }
   .form-material .form-control:focus ~ .floating-label, .form-material .form-control.focus ~ .floating-label, .form-material .form-control:not(.empty) ~ .floating-label {
-    top: -0.8rem;
-    font-size: 0.8rem; }
+    top: -0.9144rem;
+    font-size: 0.9144rem; }
   .form-material .form-control:-webkit-autofill ~ .floating-label {
-    top: -0.8rem;
-    font-size: 0.8rem; }
+    top: -0.9144rem;
+    font-size: 0.9144rem; }
   .form-material .form-control-sm ~ .floating-label {
     top: 0.429rem;
     font-size: 0.858rem; }
@@ -4568,6 +4568,9 @@ body > .loader {
 .white {
   color: #fff !important; }
 
+.text-gray {
+  color: #bdbdbd; }
+
 .bg-white {
   color: #76838f;
   background-color: #fff; }
@@ -5008,7 +5011,7 @@ body > .loader {
 [class*="blocks-"] > li,
 [class*="blocks-"] > .block {
   display: inline-block;
-  font-size: 1rem;
+  font-size: 1.143rem;
   vertical-align: top;
   padding-right: 1.0715rem;
   padding-left: 1.0715rem;
@@ -5661,7 +5664,7 @@ body > .loader {
   display: block;
   padding: 5px 0 0;
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.143rem;
   font-weight: 100;
   color: #9e9e9e; }
 
@@ -6402,7 +6405,7 @@ ul.panel-actions {
   .panel-group .panel-title {
     position: relative;
     padding: 15px 30px;
-    font-size: 1rem; }
+    font-size: 1.143rem; }
     .panel-group .panel-title::before, .panel-group .panel-title::after {
       position: absolute;
       top: 15px;
@@ -7556,7 +7559,7 @@ ul.panel-actions {
     border-radius: 0.215rem 0.215rem 0 0; }
   .pricing-list .pricing-title {
     padding: 15px 30px;
-    font-size: 1rem;
+    font-size: 1.143rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -7568,7 +7571,7 @@ ul.panel-actions {
     font-weight: 500;
     color: #37474f; }
   .pricing-list .pricing-period {
-    font-size: 1rem;
+    font-size: 1.143rem;
     font-weight: 300; }
   .pricing-list .pricing-features {
     padding: 0 18px;
@@ -7677,7 +7680,7 @@ ul.panel-actions {
     height: auto;
     padding: 0;
     margin: 0 10px 0 0;
-    font-size: 1rem;
+    font-size: 1.143rem;
     color: #e0e0e0;
     vertical-align: middle;
     cursor: pointer; }
@@ -8740,11 +8743,11 @@ h3.example-title {
     padding-right: 0;
     padding-left: 0; }
 
-.panel-accordion .panel-title {
+.page .panel-accordion .panel-title {
   padding-right: 5rem; }
-  .panel-accordion .panel-title:hover, .panel-accordion .panel-title:focus {
+  .page .panel-accordion .panel-title:hover, .page .panel-accordion .panel-title:focus {
     cursor: pointer; }
-  .panel-accordion .panel-title::before {
+  .page .panel-accordion .panel-title::before {
     right: 20px;
     display: -ms-flexbox;
     display: flex;
@@ -8760,9 +8763,9 @@ h3.example-title {
     border: 2px solid #3e8ef7;
     border-radius: 50%;
     opacity: 1; }
-  .panel-accordion .panel-title[aria-expanded="true"]::before {
-    opacity: .8; }
-  .panel-accordion .panel-title::after {
+  .page .panel-accordion .panel-title[aria-expanded="true"]::before {
+    opacity: .4; }
+  .page .panel-accordion .panel-title::after {
     display: none; }
 
 .modal-addcustomer .media {

@@ -436,8 +436,8 @@ $font-family-base: $font-family-sans-serif;
 $font-size-root: 14px;
 // stylelint-enable value-keyword-case
 
-// $font-size-base         : 1rem;
-$font-size-base: pxtorem(14px);
+$font-size-base: 1rem;
+//$font-size-base: pxtorem(14px);
 $font-size-lg: pxtorem(18px);// ~18px
 $font-size-sm: pxtorem(12px);// ~12px
 $font-size-xs: pxtorem(10px) !default;// ~10px  v4b remove it;
@@ -458,7 +458,7 @@ $h1-font-size: pxtorem(36px);// ~36px
 $h2-font-size: pxtorem(30px);// ~30px
 $h3-font-size: pxtorem(24px);// ~24px
 $h4-font-size: pxtorem(18px);// ~18px
-$h5-font-size: pxtorem(14px);
+$h5-font-size: pxtorem(16px);
 $h6-font-size: pxtorem(12px);// ~12px
 // --v4b2--start
 $font-size-icon: pxtorem(16px);

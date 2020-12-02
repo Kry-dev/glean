@@ -621,7 +621,7 @@ button.input-search-btn, button.input-search-btn:focus {
 .form-horizontal .form-control-label {
   padding-right: 15px;
   padding-left: 15px;
-  font-size: 1rem; }
+  font-size: 1.143rem; }
 
 @media (min-width: 768px) {
   .form-horizontal .form-control-label {
@@ -1842,7 +1842,7 @@ a.btn:not(.btn-link) {
   .btn-icon.btn-sm,
   .btn.icon.btn-sm {
     padding: 0.572rem;
-    font-size: 1rem; }
+    font-size: 1.143rem; }
   .btn-icon.btn-lg,
   .btn.icon.btn-lg {
     padding: 0.858rem;
@@ -2355,7 +2355,7 @@ fieldset[disabled] .btn-pure {
 
 .dropdown-menu > .dropdown-header {
   padding: 8px 20px 6px;
-  font-size: 1rem;
+  font-size: 1.143rem;
   font-weight: 500;
   cursor: default; }
 
@@ -3830,7 +3830,7 @@ fieldset[disabled] .btn-pure {
     position: absolute;
     top: 15px;
     left: 20px;
-    font-size: 1rem; }
+    font-size: 1.143rem; }
 
 .alert-avatar {
   position: relative;
@@ -4330,7 +4330,7 @@ fieldset[disabled] .btn-pure {
   .list-group .media-heading {
     margin-top: 0;
     margin-bottom: 5px;
-    font-size: 1rem; }
+    font-size: 1.143rem; }
 
 .list-group-full > .list-group-item {
   padding-right: 0;
@@ -5637,7 +5637,7 @@ label {
   .vertical-align-middle, .vertical-align-bottom {
     display: inline-block;
     max-width: 100%;
-    font-size: 1rem; }
+    font-size: 1.143rem; }
   .vertical-align-middle {
     vertical-align: middle; }
   .vertical-align-bottom {
