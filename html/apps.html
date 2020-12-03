@@ -37,10 +37,12 @@
     <link rel="stylesheet" href="../assets/vendor/datatables.net-buttons-bs4/dataTables.buttons.bootstrap4.css">
     
     <!-- <link rel="stylesheet" href="../assets/vendor/chartist/chartist.css"> -->
+    <link rel="stylesheet" href="../assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css">
     <link rel="stylesheet" href="../assets/vendor/asscrollable/asScrollable.css">
     <link rel="stylesheet" href="../assets/vendor/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="../assets/vendor/select2/select2.css">
     <link rel="stylesheet" href="../assets/vendor/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" href="../assets/vendor/typeahead-js/typeahead.css">
     <!-- <link rel="stylesheet" href="../assets/examples/css/uikit/modals.css"> -->
     <!-- <link rel="stylesheet" href="../assets/examples/css/charts/chartist.css"> -->
     <link rel="stylesheet" href="../assets/examples/css/tables/datatable.css">
@@ -259,7 +261,7 @@
                 </div>
               </div>
               <div class="col-12 mb-20">
-                <h3>Type</h3>
+                <h5 class="h5 black text-uppercase"><b>Type</b></h5>
                 <ul class="list-unstyled list-inline m-0">
                   <li class="list-inline-item">
                     <input type="radio" class="icheckbox-green" id="inputRadioschecked" name="inputRadios"
@@ -274,8 +276,11 @@
                 </ul>
               </div>
              <div class="col-12">
+                <h5 class="h5 black text-uppercase"><b>Tags</b></h5>
                 <div class="form-group mb-0">
-                  <input type="text" class="form-control form-control-lg" placeholder="Enter the tags here">
+                 <input class="form-control form-control-lg" id="tagsInput" name="tagsInput">
+<!--                 <input id="tagsInput" class="form-control form-control-lg" name="tags" data-plugin="tagsinput" value="Tag 1,Tag 2,Tag 3,Tag 4,Tag 5"-->
+<!--                 <input id="tagsInput" class="form-control form-control-lg" name="tags" data-plugin="tagsinput" value="Tag 1,Tag 2,Tag 3,Tag 4,Tag 5"-->
                 </div>
               </div>
             </div>
@@ -473,8 +478,6 @@
       <button type="button" class="panel-form-btn"><i class="icon wb-plus" aria-hidden="true"></i>Add new
         condintions</button>
     </div>
-    <button type="button" class="btn btn-lg btn-primary my-3"><i class="icon wb-plus" aria-hidden="true"></i> Add New
-      Group</button>
     <div class="row row-lg">
       <div class="col-xl-3 offset-xl-4">
         <a href="#" class="d-block  btn btn-lg btn-success">Save</a>
@@ -537,9 +540,73 @@
     <script src="../assets/vendor/icheck/icheck.min.js"></script>
     <script src="../assets/vendor/select2/select2.full.min.js"></script>
     <script src="../assets/vendor/bootstrap-select/bootstrap-select.js"></script>
+    <script src="../assets/vendor/bootstrap-tokenfield/bootstrap-tokenfield.min.js"></script>
+    <script src="../assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="../assets/vendor/typeahead-js/bloodhound.min.js"></script>
+    <script src="../assets/vendor/typeahead-js/typeahead.jquery.min.js"></script>
     <!-- <script src="../assets/vendor/chartist/chartist.js"></script> -->
     <!-- <script src="../assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.js"></script> -->
+    <script >
+     var data =
+       '[{ "value": 1, "text": "Tag 1", "continent": "Tag" }, { "value": 2, "text": "Tag 2", "continent": "Tag" }, { "value": 3, "text": "Tag 3", "continent": "Tag" }, { "value": 4, "text": "Tag 4", "continent": "Tag" }, { "value": 5, "text": "Tag 5", "continent": "Tag" }, { "value": 6, "text": "Tag 6", "continent": "Tag" } ]';
     
+     //get data pass to json
+     var tag = new Bloodhound({
+       datumTokenizer: Bloodhound.tokenizers.obj.whitespace("text"),
+       queryTokenizer: Bloodhound.tokenizers.whitespace,
+       local: jQuery.parseJSON(data) //your can use json type
+     });
+    
+     tag.initialize();
+    
+     var elt = $("#tagsInput");
+     elt.tagsinput({
+       tagClass: function(item) {
+         switch (item.continent) {
+           case 'Tag 1'   : return 'badge badge-primary';
+           case 'Tag 2'   : return 'badge badge-danger';
+           case 'Tag 3'   : return 'badge badge-success';
+           case 'Tag 4'   : return 'badge badge-secondary';
+           case 'Tag 5'   : return 'badge badge-warning';
+         }
+       },
+       itemValue: "value",
+       itemText: "text",
+       typeaheadjs: {
+         name: "tag",
+         displayKey: "text",
+         source: tag.ttAdapter()
+       }
+     });
+    
+     //insert data to input in load page
+     elt.tagsinput("add", {
+       value: 1,
+       text: "Tag 1",
+       continent: "Tag 1"
+     });
+     elt.tagsinput("add", {
+       value: 2,
+       text: "Tag 2",
+       continent: "Tag 2"
+     });
+     elt.tagsinput("add", {
+       value: 3,
+       text: "Tag 3",
+       continent: "Tag 3"
+     });
+     elt.tagsinput("add", {
+       value: 3,
+       text: "Tag 4",
+       continent: "Tag 4"
+     });
+     elt.tagsinput("add", {
+       value: 3,
+       text: "Tag 5",
+       continent: "Tag 5"
+     });
+    
+    </script >
     
     <!-- Scripts -->
     <script src="../assets/js/Component.js"></script>
@@ -562,11 +629,13 @@
     <script src="../assets/js/Plugin/asscrollable.js"></script>
     <script src="../assets/js/Plugin/slidepanel.js"></script>
     <script src="../assets/js/Plugin/switchery.js"></script>
-    <script src="../assets/js/Plugin/matchheight.js"></script>
-    <script src="../assets/js/Plugin/jvectormap.js"></script>
-    <script src="../assets/js/Plugin/datatables.js"></script>
-    <script src="../assets/js/Plugin/asscrollable.js"></script>
+    <!--<script src="../assets/js/Plugin/matchheight.js"></script>-->
+    <!--<script src="../assets/js/Plugin/jvectormap.js"></script>-->
+    <!--<script src="../assets/js/Plugin/datatables.js"></script>-->
+    <!--<script src="../assets/js/Plugin/asscrollable.js"></script>-->
     <script src="../assets/js/Plugin/select2.js"></script>
+    <script src="../assets/js/Plugin/bootstrap-tagsinput.js"></script>
+    <script src="../assets/js/Plugin/bootstrap-tokenfield.js"></script>
     
     <script src="../assets/examples/js/dashboard/v1.js"></script>
     <script src="../assets/examples/js/charts/chartist.js"></script>

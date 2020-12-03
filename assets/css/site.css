@@ -8973,3 +8973,6 @@ h3.example-title {
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
   right: auto;
   left: 0; }
+
+.bootstrap-tagsinput {
+  width: 100%; }
