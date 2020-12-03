@@ -8615,7 +8615,7 @@ h3.example-title {
   border-radius: 3px; }
 
 .custom-table .actions {
-  width: 140px; }
+  width: 80px; }
   .custom-table .actions .btn-group {
     float: right; }
     .custom-table .actions .btn-group .btn {
@@ -8731,6 +8731,9 @@ h3.example-title {
 .custom-table table.dataTable thead .sorting_desc_disabled::after {
   content: "\f183"; }
 
+.custom-table table thead th[aria-label="Action"] {
+  text-align: right; }
+
 .table-simple {
   font-size: 1rem;
   font-style: normal;
@@ -8742,6 +8745,54 @@ h3.example-title {
   .table-simple td {
     padding-right: 0;
     padding-left: 0; }
+
+.dt-button-collection .dt-button.dropdown-item {
+  position: relative;
+  padding: .25em 0;
+  text-align: left !important;
+  background: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important; }
+
+.dt-button-collection .dropdown-item::before,
+.dt-button-collection .dropdown-item.active span::before {
+  position: absolute;
+  top: 9px;
+  left: 5px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  border-radius: 3px; }
+
+.dt-button-collection .dropdown-item::before {
+  content: "";
+  border: 1px solid #b5c1c8; }
+
+.dt-button-collection .dropdown-item.active span::before {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  font-family: "Web Icons";
+  color: #fff;
+  content: "\f192";
+  background: #3e8ef7;
+  border: 1px solid #3e8ef7; }
+
+.dt-button-collection .dropdown-item span {
+  display: block;
+  width: 100%;
+  padding-left: 28px;
+  font-family: "Euclid Circular A", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  color: #000; }
 
 .page .panel-accordion .panel-title {
   padding-right: 5rem; }

@@ -146,7 +146,7 @@ $btn-width: 165px;
   }
 
   .actions {
-    width: 140px;
+    width: 80px;
 
     .btn-group {
       float: right;
@@ -303,6 +303,12 @@ $btn-width: 165px;
   table.dataTable thead .sorting_desc_disabled::after {
     content: "\f183";
   }
+
+  table thead th[aria-label="Action"] {
+    text-align: right;
+  }
+
+
 }
 
 
@@ -323,6 +329,60 @@ $btn-width: 165px;
   line-height: 150%;
   color: #828282;
 }
+
+
+
+//customization of the collection button from dropdown to select list with checkboxes
+.dt-button-collection .dt-button.dropdown-item {
+
+  position: relative;
+  padding: .25em 0;
+  text-align: left !important;
+  background: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.dt-button-collection .dropdown-item::before,
+.dt-button-collection .dropdown-item.active span::before {
+  position: absolute;
+  top: 9px;
+  left: 5px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.dt-button-collection .dropdown-item::before {
+  content: "";
+  border: 1px solid #b5c1c8;
+
+
+}
+.dt-button-collection .dropdown-item.active span::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Web Icons";
+  color: $white;
+  content: "\f192";
+  background: $primary;
+  border: 1px solid $primary;
+}
+.dt-button-collection .dropdown-item span {
+  display: block;
+  width: 100%;
+  padding-left: 28px;
+  font-family: $font-family-base;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  color: $black;
+}
+
+
 // Responsive
 // ========================================================================
 
