@@ -52,6 +52,74 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <nav id="topNav" class="navbar fixed-top navbar-default navbar-toggleable-sm  bg-inverse" >
+      <a class="nav-button navbar-toggler navbar-toggler-left" data-toggle="collapse" aria-expanded="false"
+         data-target=".mobile-menu" >
+       <span id="nav-icon" >
+        <span ></span >
+        <span ></span >
+        <span ></span >
+       </span >
+      </a >
+     <div class="mobile-menu collapsed" >
+        <div class="flex-center p-5" >
+          <ul class="nav flex-column" >
+            <li class="nav-item delay-1" >
+             <a class="nav-link active" href="#" ><i class="icon wb-layout" aria-hidden="true" ></i > Dashboard</a >
+            </li >
+            <li class="nav-item delay-2" >
+             <a class="nav-link" href="#" ><i class="icon fa-bullhorn" aria-hidden="true" ></i > Advertising</a >
+            </li >
+            <li class="nav-item delay-3" >
+             <a class="nav-link" href="#" ><i class="icon fa-users" aria-hidden="true" ></i > Users</a >
+            </li >
+            <li class="nav-item delay-4" >
+             <a class="nav-link" href="#" ><i class="icon wb-grid-4" aria-hidden="true" ></i > Dashboard</a >
+            </li >
+            <li class="nav-item delay-5" >
+             <a class="nav-link" href="#" ><i class="icon wb-settings" aria-hidden="true" ></i > Settings</a >
+            </li >
+           <li class="nav-item delay-6" >
+             <a class="nav-link" href="#" ><i class="icon wb-bell" aria-hidden="true" ></i > Notifications</a >
+            </li >
+          </ul >
+        </div >
+      </div > <!--main-menu end-->
+        <a class="navbar-brand mx-auto" href="#" >
+         <span class="site-menubar-brand-logo" >G</span >
+         <span class="site-menubar-brand-text" >Gleantap</span >
+        </a >
+    
+       <button class="navbar-avatar navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target=".nav.navbar-avatar"
+               data-animation="scale-up" role="button" aria-expanded="false">
+         <span class="avatar avatar-online" >
+           <img src="../../assets/portraits/5.jpg" alt="..." >
+           <i ></i >
+         </span >
+       </button >
+       <ul class="nav navbar-avatar collapse" role="menu" >
+        <li class="nav-item" >
+         <a class="nav-link" href="javascript:void(0)" role="menuitem" >
+          <i class="icon wb-user" aria-hidden="true" ></i > Profile
+         </a >
+        </li >
+        <li class="nav-item" >
+         <a class="nav-link" href="javascript:void(0)" role="menuitem" >
+          <i class="icon wb-payment" aria-hidden="true" ></i > Billing
+         </a >
+        </li >
+         <li class="nav-item" >
+         <a class="nav-link" href="javascript:void(0)" role="menuitem" >
+          <i class="icon wb-settings" ria-hidden="true" ></i > Settings
+         </a >
+         </li >
+        <li class="nav-item" >
+         <a class="nav-link" href="javascript:void(0)" role="menuitem" >
+          <i class="icon wb-power" aria-hidden="true" ></i > Logout</a >
+        </li >
+       </ul >
+    </nav >
+    
     <div class="site-menubar site-menubar-light">
       <div class="site-menubar-brand site-gridmenu-toggle" data-toggle="gridmenu">
           <span class="site-menubar-brand-logo">G</span>
@@ -251,7 +319,7 @@
                     <code>.ribbon-warning</code>) to change the appearance of a
                     ribbon.</p>
                   <div class="row">
-                    <div class="col-xl-2 col-md-4">
+                    <div class="col-xl-2 mb-3 mb-md-0 col-md-4">
                       <div class="example">
                         <div class="ribbon">
                           <span class="ribbon-inner">Ribbon</span>
@@ -260,7 +328,7 @@
                           diam.</p>
                       </div>
                     </div>
-                    <div class="col-xl-2 col-md-4">
+                    <div class="col-xl-2 mb-3 mb-md-0 col-md-4">
                       <div class="example">
                         <div class="ribbon ribbon-primary">
                           <span class="ribbon-inner">Ribbon</span>
@@ -269,7 +337,7 @@
                           diam.</p>
                       </div>
                     </div>
-                    <div class="col-xl-2 col-md-4">
+                    <div class="col-xl-2 mb-3 mb-md-0 col-md-4">
                       <div class="example">
                         <div class="ribbon ribbon-danger">
                           <span class="ribbon-inner">Ribbon</span>
@@ -278,7 +346,7 @@
                           diam.</p>
                       </div>
                     </div>
-                    <div class="col-xl-2 col-md-4">
+                    <div class="col-xl-2 mb-3 mb-md-0 col-md-4">
                       <div class="example">
                         <div class="ribbon ribbon-vertical ribbon-warning">
                           <span class="ribbon-inner"><i class="icon wb-heart" aria-hidden="true"></i></span>
@@ -287,7 +355,7 @@
                           diam.</p>
                       </div>
                     </div>
-                    <div class="col-xl-2 col-md-4">
+                    <div class="col-xl-2 mb-3 mb-md-0 col-md-4">
                       <div class="example">
                         <div class="ribbon ribbon-vertical ribbon-success">
                           <span class="ribbon-inner"><i class="icon wb-heart" aria-hidden="true"></i></span>
@@ -296,7 +364,7 @@
                           diam.</p>
                       </div>
                     </div>
-                    <div class="col-xl-2 col-md-4">
+                    <div class="col-xl-2 mb-3 mb-md-0 col-md-4">
                       <div class="example">
                         <div class="ribbon ribbon-vertical ribbon-info">
                           <span class="ribbon-inner"><i class="icon wb-heart" aria-hidden="true"></i></span>
@@ -318,7 +386,7 @@
                   <h4 class="example-title">Reverse</h4>
                   <p> Alternatively, you can align ribbons to the right by using <code>.ribbon-reverse</code>                    utility classes.</p>
                   <div class="row">
-                    <div class="col-xl-2 col-md-4">
+                    <div class="col-xl-2 mb-3 mb-md-0 col-md-4">
                       <div class="example example-reverse">
                         <div class="ribbon ribbon-reverse">
                           <span class="ribbon-inner">Ribbon</span>
@@ -327,7 +395,7 @@
                           diam.</p>
                       </div>
                     </div>
-                    <div class="col-xl-2 col-md-4">
+                    <div class="col-xl-2 mb-3 mb-md-0 col-md-4">
                       <div class="example example-reverse">
                         <div class="ribbon ribbon-reverse ribbon-primary">
                           <span class="ribbon-inner">Ribbon</span>
@@ -336,7 +404,7 @@
                           diam.</p>
                       </div>
                     </div>
-                    <div class="col-xl-2 col-md-4">
+                    <div class="col-xl-2 mb-3 mb-md-0 col-md-4">
                       <div class="example example-reverse">
                         <div class="ribbon ribbon-reverse ribbon-danger">
                           <span class="ribbon-inner">Ribbon</span>
@@ -345,7 +413,7 @@
                           diam.</p>
                       </div>
                     </div>
-                    <div class="col-xl-2 col-md-4">
+                    <div class="col-xl-2 mb-3 mb-md-0 col-md-4">
                       <div class="example example-reverse">
                         <div class="ribbon ribbon-vertical ribbon-reverse ribbon-warning">
                           <span class="ribbon-inner"><i class="icon wb-heart" aria-hidden="true"></i></span>
@@ -354,7 +422,7 @@
                           diam.</p>
                       </div>
                     </div>
-                    <div class="col-xl-2 col-md-4">
+                    <div class="col-xl-2 mb-3 mb-md-0 col-md-4">
                       <div class="example example-reverse">
                         <div class="ribbon ribbon-vertical ribbon-reverse ribbon-success">
                           <span class="ribbon-inner"><i class="icon wb-heart" aria-hidden="true"></i></span>
@@ -363,7 +431,7 @@
                           diam.</p>
                       </div>
                     </div>
-                    <div class="col-xl-2 col-md-4">
+                    <div class="col-xl-2 mb-3 mb-md-0 col-md-4">
                       <div class="example example-reverse">
                         <div class="ribbon ribbon-vertical ribbon-reverse ribbon-info">
                           <span class="ribbon-inner"><i class="icon wb-heart" aria-hidden="true"></i></span>

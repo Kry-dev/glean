@@ -166,3 +166,17 @@ body {
     display: block;
   }
 }
+
+.site-navbar.navbar.navbar-default {
+  display: none;
+}
+@include media-breakpoint-down(md) {
+  .site-navbar.navbar.navbar-default {
+    display: flex;
+  }
+  //.site-menubar-hide .site-menubar,
+  //.site-menubar-open .site-menubar {
+  //  top: 0;
+  //  width: 100% !important;
+  //}
+}

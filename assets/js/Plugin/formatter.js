@@ -50,8 +50,8 @@
 
         var browserName = navigator.userAgent.toLowerCase();
         if (/msie/i.test(browserName) && !/opera/.test(browserName)) ;
-        var $el = this.$el,
-            options = this.options;
+        var $el = this.$el;
+        var options = this.options;
 
         if (options.pattern) {
           options.pattern = options.pattern.replace(/\[\[/g, '{{').replace(/\]\]/g, '}}');

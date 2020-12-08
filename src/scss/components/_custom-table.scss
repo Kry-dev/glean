@@ -386,10 +386,42 @@ $btn-width: 165px;
 // Responsive
 // ========================================================================
 
-@include media-breakpoint-up(md) {
+//@include media-breakpoint-up(md) {
+//  .custom-table-toolbar .btn-group {
+//    justify-content: flex-start;
+//    flex-wrap: wrap;
+//  }
+//  .custom-table div.dataTables_wrapper div.dataTables_filter label {
+//    width: 100%;
+//  }
+//}
 
+@include media-breakpoint-down(sm) {
+  .custom-table-toolbar .btn-group .btn,
+  .custom-table-toolbar .btn.dropdown-toggle {
+    width: 100%;
+    margin: 0 auto 10px;
+  }
 }
-
+@include media-breakpoint-down(md) {
+  .custom-table-toolbar .btn-group {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .custom-table-toolbar .btn-group .btn {
+    margin-bottom: 10px;
+  }
+  .custom-table div.dataTables_wrapper div.dataTables_filter label {
+    width: 100%;
+  }
+  div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+    justify-content: center !important;
+  }
+  .dataTables_length{
+    float: none !important;
+    margin-bottom: 1rem;
+  }
+}
 @include media-breakpoint-up(xl) {
 
 }

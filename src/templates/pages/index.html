@@ -70,6 +70,7 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
         $(e.currentTarget.hash).find('.ct-chart').each(function(el, tab) {
           tab.__chartist__.update();
         });
+        $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
       });
       // end of Solving the issue of displaying charts when switching page tabs
       // datatable js
@@ -77,6 +78,10 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
       let table = $('#customerListTable');
       var options = $.extend(true, {}, defaults, {
         "searching": true,
+        "responsive": true,
+        "rowReorder": {
+          "selector": 'td:nth-child(2)'
+        },
         "ordering": true,
         "aoColumnDefs": [
           { 'bSortable': false, 'aTargets': [ 5 ] } // hide sort arrows for last column
