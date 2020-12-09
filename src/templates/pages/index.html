@@ -87,6 +87,12 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
           { 'bSortable': false, 'aTargets': [ 5 ] } // hide sort arrows for last column
         ],
         "paging": true,
+        "language": {
+          "paginate": {
+            "next": '<i class="icon wb-chevron-right"></i>', // or '>'
+            "previous": '<i class="icon wb-chevron-left"></i>' // or '<'
+          }
+        },
         "autoWidth": true,
         "fixedHeader": false,
         "iDisplayLength": 5,
@@ -170,19 +176,7 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             aria-controls="segmentReport" role="tab" aria-selected="true">Segment Report</a></li>
         <li class="nav-item" role="presentation"><a class="nav-link " data-toggle="tab" href="#customerList"
             aria-controls="customerList" role="tab" aria-selected="false">Customer list</a></li>
-        <li class="nav-item" role="presentation"><a class="nav-link" data-toggle="tab" href="#segmentInsights"
-            aria-controls="segmentInsights" role="tab" aria-selected="false">Segment Insights</a></li>
-        <li class="dropdown nav-item" role="presentation" style="display: none;">
-          <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" aria-expanded="false">Dropdown </a>
-          <div class="dropdown-menu" role="menu">
-            <a class="dropdown-item" data-toggle="tab" href="#segmentReport" aria-controls="segmentReport"
-              role="tab">Home</a>
-            <a class="dropdown-item" data-toggle="tab" href="#customerList" aria-controls="customerList"
-              role="tab">Components</a>
-            <a class="dropdown-item" data-toggle="tab" href="#segmentInsights" aria-controls="segmentInsights"
-              role="tab">Css</a>
-          </div>
-        </li>
+       
       </ul>
       <div class="tab-content pt-20">
         <div class="tab-pane active show" id="segmentReport" role="tabpanel">
@@ -1310,9 +1304,6 @@ body_class: dashboard site-menubar-fold site-menubar-fold-alt site-menubar-keep
             </div>
           </div>
           <!-- End Panel Table Individual column searching -->
-        </div>
-        <div class="tab-pane" id="segmentInsights" role="tabpanel">
-          3
         </div>
       </div>
 

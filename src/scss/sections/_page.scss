@@ -52,6 +52,10 @@
 .page-content {
   @include media-breakpoint-down(xs) {
     padding: 10px;
+    #page-tabs .nav-tabs-line li {
+      width: 50%;
+      text-align: center;
+    }
   }
   padding: $page-vertical-padding $page-horizontal-padding;
 }
@@ -183,5 +187,10 @@
 @include media-breakpoint-down(md) {
   .page {
     min-height: calc(100% - #{$site-footer-xs-height});
+  }
+}
+@include media-breakpoint-down(sm) {
+  .page {
+    padding-top: 56px;
   }
 }

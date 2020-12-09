@@ -44,6 +44,7 @@
 
 // MOBILE MENU CUSTOM STYLES
 #topNav {
+  display: flex;
   min-height: 56px;
   .navbar-brand {
     font-weight: 700;
@@ -62,6 +63,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 100;
   display: none;
   width: 100%;
   height: 100%;
@@ -203,11 +205,11 @@
 }
 @include media-breakpoint-up(md) {
   #topNav {
-    display: flex;
+    display: none;
   }
 }
 @include media-breakpoint-down(sm) {
-  #topNav {
+  .dashboard {
 
     .site-menubar-brand-text {
       display: none !important;
